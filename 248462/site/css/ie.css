@@ -1,0 +1,6 @@
+/* -----------------for pie------------------- */
+.submenu_1, .submenu_2{
+box-shadow: none;
+}
+.btnsHolder>a,.scroll-btns>a{position: relative; behavior: url(js/PIE.htc); }
+.submenu_1, .submenu_2{position: absolute; behavior: url(js/PIE.htc); }

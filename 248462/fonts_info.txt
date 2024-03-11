@@ -1,0 +1,4 @@
+List of Fonts used in template 
+
+Courgette		http://www.google.com/webfonts/specimen/Courgette
+Droid Sans	http://www.google.com/webfonts/specimen/Droid+Sans
