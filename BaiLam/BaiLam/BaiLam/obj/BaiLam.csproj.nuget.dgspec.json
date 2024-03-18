@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "D:\\congnghephanmem\\congnghephanmem\\BaiLam\\bailam\\BaiLam\\BaiLam.csproj": {}
+    "D:\\congnghephanmem\\congnghephanmem\\BaiLam\\BaiLam\\BaiLam\\BaiLam.csproj": {}
   },
   "projects": {
-    "D:\\congnghephanmem\\congnghephanmem\\BaiLam\\bailam\\BaiLam\\BaiLam.csproj": {
+    "D:\\congnghephanmem\\congnghephanmem\\BaiLam\\BaiLam\\BaiLam\\BaiLam.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "D:\\congnghephanmem\\congnghephanmem\\BaiLam\\bailam\\BaiLam\\BaiLam.csproj",
+        "projectUniqueName": "D:\\congnghephanmem\\congnghephanmem\\BaiLam\\BaiLam\\BaiLam\\BaiLam.csproj",
         "projectName": "BaiLam",
-        "projectPath": "D:\\congnghephanmem\\congnghephanmem\\BaiLam\\bailam\\BaiLam\\BaiLam.csproj",
+        "projectPath": "D:\\congnghephanmem\\congnghephanmem\\BaiLam\\BaiLam\\BaiLam\\BaiLam.csproj",
         "packagesPath": "C:\\Users\\phang\\.nuget\\packages\\",
-        "outputPath": "D:\\congnghephanmem\\congnghephanmem\\BaiLam\\bailam\\BaiLam\\obj\\",
+        "outputPath": "D:\\congnghephanmem\\congnghephanmem\\BaiLam\\BaiLam\\BaiLam\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"

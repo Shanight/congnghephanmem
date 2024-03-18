@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "7mHmOcM9/PvsoPMwHZkihSMBbMUinogp9DXWH+aClp/HQUtRqOGB1OCt5SiTHel4t4BHAOxF4NNxw4yqmSwB9w==",
+  "dgSpecHash": "Bn0Vf+dxJEF7/Brro63s++wXAG93gj+2B350Ms35NZjQjB2lztFqMcg35C8vsIN9t00klW306GfzNRKJABPnpw==",
   "success": true,
-  "projectFilePath": "D:\\congnghephanmem\\congnghephanmem\\BaiLam\\bailam\\BaiLam\\BaiLam.csproj",
+  "projectFilePath": "D:\\congnghephanmem\\congnghephanmem\\BaiLam\\BaiLam\\BaiLam\\BaiLam.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\phang\\.nuget\\packages\\azure.core\\1.25.0\\azure.core.1.25.0.nupkg.sha512",
     "C:\\Users\\phang\\.nuget\\packages\\azure.identity\\1.7.0\\azure.identity.1.7.0.nupkg.sha512",
