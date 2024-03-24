@@ -2,9 +2,9 @@
 import { useState, useEffect } from "react";
 import axios from "axios";
 import { useNavigate, useParams } from "react-router-dom";
-import Leftbar from "../navbar/leftbar";
 import Topbar from "../navbar/topbar";
-import "../../css";
+import Leftbar from "../navbar/leftbar";
+import "../../../css";
 
 function SuaPhong() {
     const navigate = useNavigate();
@@ -34,7 +34,7 @@ function SuaPhong() {
  
         axios.put(`http://localhost/react/api/${id}/edit`, inputs).then(function(response){
             console.log(response.data);
-            navigate('/phong');
+            navigate('/admin/phong');
         });
          
     }

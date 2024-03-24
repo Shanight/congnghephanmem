@@ -1,12 +1,14 @@
+/* eslint-disable jsx-a11y/alt-text */
 import React from "react";
-import "../../css";
-
+import "../../../css";
+import logo from "../../../assets/img/logo.png";
 function Topbar() {
   return (
     <header id="header" className="header fixed-top d-flex align-items-center">
       <div className="d-flex align-items-center justify-content-between">
         <a href="../index.html" className="logo d-flex align-items-center">
-          <img src="../assets/img/logo.png" />
+          <img src={logo} />
+          
           <span className="d-none d-lg-block">Paradise Hotel</span>
         </a>
         <i className="bi bi-list toggle-sidebar-btn" />

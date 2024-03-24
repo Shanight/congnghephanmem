@@ -1,9 +1,11 @@
-import { useEffect, useState } from "react";
-import "../../css";
+import React, { useEffect, useRef, useState } from 'react';
+
+import "../../../css";
 import Leftbar from "../navbar/leftbar";
 import Topbar from "../navbar/topbar";
 import axios from "axios"
 import { Link } from "react-router-dom";
+import { DataTable } from 'simple-datatables';
 
 function Phong() {
 
@@ -27,6 +29,23 @@ function Phong() {
     });
   }
 
+  const tableRef = useRef(null);
+
+  useEffect(() => {
+    const initializeDataTable = () => {
+      if (tableRef.current) {
+        new DataTable(tableRef.current);
+      }
+    };
+
+    const initializeDataTableWithDelay = () => {
+      setTimeout(initializeDataTable, 100); // Áp dụng độ trễ 0.5 giây
+    };
+
+    initializeDataTableWithDelay();
+
+   
+  }, []);
 
   return (
     <div className="">
@@ -43,7 +62,7 @@ function Phong() {
               <li className="breadcrumb-item active">Phòng</li>
             </ol>
             <nav style={{ textAlign: "right" }}>
-              <a href="../phong/themphong">
+              <a href="../admin/phong/themphong">
                 <button type="button" className="btn btn-info" style={{}}>
                   {" "}
                   + Thêm
@@ -58,7 +77,7 @@ function Phong() {
             <div className="col-12">
               <div className="card recent-sales overflow-auto">
                 <div className="card-body">
-                  <table className="table table-borderless datatable">
+                  <table className="table table-borderless datatable" ref={tableRef}>
                     <thead>
                       <tr>
                         <th scope="col">ID phòng</th>
@@ -66,35 +85,33 @@ function Phong() {
                         <th scope="col">Hạng phòng</th>
                         <th scope="col">Giá/giờ</th>
                         <th scope="col">Tình trạng</th>
-                        <th>Chi tiết</th>
+                        <th scope="col">Chi tiết</th>
                       </tr>
                     </thead>
                     <tbody>
-                      {phongs.map((phongs, key) =>
-                        <tr key={key}>
-                          <td scope="row">
-                            <a href="#">{phongs.SoPhong}</a>
-                          </td>
-                          <td>{phongs.TenPhong}</td>
-                          <td>{phongs.HangPhong}</td>
-                          <td>{phongs.GiaPhong} $</td>
-                          <td>
-                            <span className="badge bg-success">{phongs.TrangThai}</span>
-                          </td>
-                          <td>
-                            <button type="button" className="btn btn-success">
-                              <Link to={`${phongs.IDPhong}/suaphong`} style={{ color: "white" }}><i className="bi bi-pen" /></Link>
-                              <a href="suaphong.html" >
-
-                              </a>
-                            </button>
-                            <button onClick={() => deletephongs(phongs.IDPhong)} className="btn btn-danger">
-                              X
-                            </button>
-                          </td>
-                        </tr>
-                      )}
-
+                      {phongs.map((phong, key) => (
+                        <React.Fragment key={key}>
+                          <tr>
+                            <th scope="col">{phong.SoPhong}</th>
+                            <td scope="col">{phong.TenPhong}</td>
+                            <td scope="col">{phong.HangPhong}</td>
+                            <td scope="col">{phong.GiaPhong} $</td>
+                            <td scope="col">
+                              <span className="badge bg-success">{phong.TrangThai}</span>
+                            </td>
+                            <td scope="col">
+                              <button type="button" className="btn btn-success">
+                                <Link to={`${phong.IDPhong}/suaphong`} style={{ color: "white" }}>
+                                  <i className="bi bi-pen" />
+                                </Link>
+                              </button>
+                              <button onClick={() => deletephongs(phong.IDPhong)} className="btn btn-danger">
+                                X
+                              </button>
+                            </td>
+                          </tr>
+                        </React.Fragment>
+                      ))}
                     </tbody>
                   </table>
                 </div>

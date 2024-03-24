@@ -14,7 +14,6 @@ import "./assets/vendor/bootstrap/js/bootstrap.bundle";
 import "./assets/vendor/chart.js/chart.umd";
 import "./assets/vendor/echarts/echarts";
 import "./assets/vendor/quill/quill";
-import "./assets/vendor/simple-datatables/simple-datatables";
 import "./assets/vendor/tinymce/tinymce";
 import "./assets/vendor/php-email-form/validate";
 import "./assets/js/main";

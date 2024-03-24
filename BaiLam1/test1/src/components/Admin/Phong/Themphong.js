@@ -1,5 +1,5 @@
 import { useState } from "react";
-import "../../css";
+import "../../../css";
 import Leftbar from "../navbar/leftbar";
 import Topbar from "../navbar/topbar";
 import { useNavigate } from "react-router-dom";
@@ -10,20 +10,31 @@ function Themphong() {
   const navigate = useNavigate();
 
   const [inputs, setInputs] = useState([]);
-
+  const handleFileChange = (event) => {
+    const files = event.target.files;
+    setInputs((prevState) => ({ ...prevState, images: files }));
+    
+  };
   const handleChange = (event) => {
+    
     const name = event.target.name;
     const value = event.target.value;
     setInputs(values => ({ ...values, [name]: value }));
+    
   }
   const handleSubmit = (event) => {
     event.preventDefault();
-
+    const formData = new FormData();
+    formData.append('inputs', inputs);
+    const config = {
+      headers: {
+        'content-type': 'multipart/form-data',
+      },
+    };
     axios.post('http://localhost/react/api/save', inputs).then(function (response) {
       console.log(response.data);
-      navigate('/phong');
+      navigate('/admin/phong');
     });
-
   }
 
   return (
@@ -36,7 +47,7 @@ function Themphong() {
           <nav>
             <ol className="breadcrumb">
               <li className="breadcrumb-item">
-                <a href="index.html">Home</a>
+                <a href="/admin">Home</a>
               </li>
               <li className="breadcrumb-item active">Phòng</li>
             </ol>
@@ -49,7 +60,7 @@ function Themphong() {
               <div className="card-body">
                 <h5 className="card-title">Thêm phòng</h5>
                 {/* Multi Columns Form */}
-                <form className="row g-3" onSubmit={handleSubmit}>
+                <form className="row g-3" onSubmit={handleSubmit} enctype="multipart/form-data">
                   <div className="col-md-12">
                     <label htmlFor="TenPhong" className="form-label">
                       Tên phòng
@@ -98,19 +109,20 @@ function Themphong() {
                       onChange={handleChange}
                     />
                   </div>
+
                   <div className="col-md-6">
-                    <label htmlFor="TrangThai" className="form-label">
-                      Trạng thái
+                    <label htmlFor="SoPhong" className="form-label">
+                      Up ảnh
                     </label>
                     <input
-                      type="text"
-                      className="form-control"
-                      id="TrangThai"
-                      name="TrangThai"
-                      onChange={handleChange}
+                      type="file"
+                      multiple
+                      name="images"
+                      onChange={handleFileChange}
                     />
-
                   </div>
+
+
                   <div className="text-center">
                     <button
                       type="submit"
