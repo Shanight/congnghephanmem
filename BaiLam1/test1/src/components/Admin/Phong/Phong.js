@@ -6,27 +6,33 @@ import Topbar from "../navbar/topbar";
 import axios from "axios"
 import { Link } from "react-router-dom";
 import { DataTable } from 'simple-datatables';
-
 function Phong() {
 
-  const [phongs, setphongs] = useState([]);
+  const [phongs, setPhongs] = useState([]);
+
   useEffect(() => {
-    getphongs();
+    getPhongs();
   }, []);
 
-
-  function getphongs() {
-    axios.get('http://localhost/react/api/').then(function (response) {
-      console.log(response.data);
-      setphongs(response.data);
-    });
+  function getPhongs() {
+    axios.get('http://localhost/react/api/phong.php')
+      .then(function (response) {
+        setPhongs(response.data);
+      })
+      .catch(function (error) {
+        console.error(error);
+      });
   }
 
-  const deletephongs = (id) => {
-    axios.delete(`http://localhost/react/api/${id}/delete`).then(function (response) {
-      console.log(response.data);
-      getphongs();
-    });
+  function deletePhong(id) {
+    axios.delete(`http://localhost/react/api/phong.php/${id}`)
+      .then(function (response) {
+        console.log(response.data);
+        getPhongs(); // Refresh the list of phongs after deletion
+      })
+      .catch(function (error) {
+        console.error(error);
+      });
   }
 
   const tableRef = useRef(null);
@@ -39,12 +45,10 @@ function Phong() {
     };
 
     const initializeDataTableWithDelay = () => {
-      setTimeout(initializeDataTable, 100); // Áp dụng độ trễ 0.5 giây
+      setTimeout(initializeDataTable, 500); // Áp dụng độ trễ 0.5 giây
     };
 
     initializeDataTableWithDelay();
-
-   
   }, []);
 
   return (
@@ -89,28 +93,26 @@ function Phong() {
                       </tr>
                     </thead>
                     <tbody>
-                      {phongs.map((phong, key) => (
-                        <React.Fragment key={key}>
-                          <tr>
-                            <th scope="col">{phong.SoPhong}</th>
-                            <td scope="col">{phong.TenPhong}</td>
-                            <td scope="col">{phong.HangPhong}</td>
-                            <td scope="col">{phong.GiaPhong} $</td>
-                            <td scope="col">
-                              <span className="badge bg-success">{phong.TrangThai}</span>
-                            </td>
-                            <td scope="col">
-                              <button type="button" className="btn btn-success">
-                                <Link to={`${phong.IDPhong}/suaphong`} style={{ color: "white" }}>
-                                  <i className="bi bi-pen" />
-                                </Link>
-                              </button>
-                              <button onClick={() => deletephongs(phong.IDPhong)} className="btn btn-danger">
-                                X
-                              </button>
-                            </td>
-                          </tr>
-                        </React.Fragment>
+                      {phongs.map((phong, index) => (
+                        <tr key={index}>
+                          <td>{phong.SoPhong}</td>
+                          <td>{phong.TenPhong}</td>
+                          <td>{phong.HangPhong}</td>
+                          <td>{phong.GiaPhong} $</td>
+                          <td>
+                            <span className="badge bg-success">{phong.TrangThai}</span>
+                          </td>
+                          <td>
+                            <button type="button" className="btn btn-success">
+                              <Link to={`${phong.IDPhong}/suaphong`} style={{ color: "white" }}>
+                                <i className="bi bi-pencil" />
+                              </Link>
+                            </button>
+                            <button onClick={() => deletePhong(phong.IDPhong)} className="btn btn-danger">
+                              X
+                            </button>
+                          </td>
+                        </tr>
                       ))}
                     </tbody>
                   </table>

@@ -31,7 +31,7 @@ function Themphong() {
         'content-type': 'multipart/form-data',
       },
     };
-    axios.post('http://localhost/react/api/save', inputs).then(function (response) {
+    axios.post('http://localhost/react/api/phong.php/save', inputs).then(function (response) {
       console.log(response.data);
       navigate('/admin/phong');
     });

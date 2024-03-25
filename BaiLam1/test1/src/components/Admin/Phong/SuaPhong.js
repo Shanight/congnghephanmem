@@ -7,39 +7,45 @@ import Leftbar from "../navbar/leftbar";
 import "../../../css";
 
 function SuaPhong() {
-    const navigate = useNavigate();
- 
-    const [inputs, setInputs] = useState([]);
- 
-    const {id} = useParams();
- 
-    useEffect(() => {
-        getUser();
-    }, []);
- 
-    function getUser() {
-        axios.get(`http://localhost/react/api/${id}`).then(function(response) {
-            console.log(response.data);
-            setInputs(response.data);
-        });
-    }
- 
-    const handleChange = (event) => {
-        const name = event.target.name;
-        const value = event.target.value;
-        setInputs(values => ({...values, [name]: value}));
-    }
-    const handleSubmit = (event) => {
-        event.preventDefault();
- 
-        axios.put(`http://localhost/react/api/${id}/edit`, inputs).then(function(response){
-            console.log(response.data);
-            navigate('/admin/phong');
-        });
-         
-    }
-    return (
-        <div className="">
+  const navigate = useNavigate();
+  const { id } = useParams();
+  const [inputs, setInputs] = useState({});
+
+  useEffect(() => {
+    getPhong();
+  }, []);
+
+  function getPhong() {
+    axios.get(`http://localhost/react/api/phong.php/${id}`)
+      .then(function (response) {
+        console.log(response.data);
+        setInputs(response.data);
+      })
+      .catch(function (error) {
+        console.error(error);
+      });
+  }
+
+  const handleChange = (event) => {
+    const name = event.target.name;
+    const value = event.target.value;
+    setInputs((values) => ({ ...values, [name]: value }));
+  };
+
+  const handleSubmit = (event) => {
+    event.preventDefault();
+
+    axios.put(`http://localhost/react/api/phong.php/${id}/edit`, inputs)
+      .then(function (response) {
+        console.log(response.data);
+        navigate('/admin/phong');
+      })
+      .catch(function (error) {
+        console.error(error);
+      });
+  };
+  return (
+    <div className="">
       <Topbar />
       <Leftbar />
       <main id="main" className="main">
@@ -72,7 +78,7 @@ function SuaPhong() {
                       id="TenPhong"
                       name="TenPhong"
                       onChange={handleChange}
-                      value={inputs.TenPhong}
+                      value={inputs.TenPhong || ''}
                     />
                   </div>
                   <div className="col-md-6">
@@ -147,6 +153,6 @@ function SuaPhong() {
         </section>
       </main>
     </div>
-    )
+  )
 }
 export default SuaPhong;
