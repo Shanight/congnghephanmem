@@ -34,10 +34,17 @@ namespace test3.Controllers
 
             var phong = await _context.Phongs
                 .FirstOrDefaultAsync(m => m.Id == id);
+
             if (phong == null)
             {
                 return NotFound();
             }
+
+            var anhPhongs = await _context.AnhPhongs
+       .Where(a => a.NhomAnh == id.ToString())
+       .Select(a => a.TenAnh)
+       .ToListAsync();
+            ViewBag.AnhPhongs = anhPhongs;
 
             return View(phong);
         }
@@ -49,21 +56,53 @@ namespace test3.Controllers
         }
 
         // POST: Phongs/Create
-        // To protect from overposting attacks, enable the specific properties you want to bind to.
-        // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Create([Bind("Id,TenPhong,HangPhong,GiaPhong,TrangThai,SoPhong")] Phong phong)
+        public async Task<IActionResult> Create([Bind("Id,TenPhong,HangPhong,GiaPhong,TrangThai,SoPhong")] Phong phong, IFormFile file)
         {
             if (ModelState.IsValid)
             {
                 _context.Add(phong);
                 await _context.SaveChangesAsync();
+
+                if (file != null && file.Length > 0)
+                {
+                    // Tạo tên file mới
+                    string fileName = "AnhPhong" + phong.Id + ".png";
+
+                    // Lưu ảnh vào thư mục tạm
+                    string filePath = Path.Combine("wwwroot", "imgupload", "anhphong", fileName);
+                    using (var stream = new FileStream(filePath, FileMode.Create))
+                    {
+                        await file.CopyToAsync(stream);
+                    }
+
+                    // Gọi phương thức Create trong AnhPhongsController và truyền thông tin ảnh và ID của phong
+                    await CreateAnhPhong(fileName, phong.Id);
+
+                    return RedirectToAction(nameof(Index));
+                }
+
                 return RedirectToAction(nameof(Index));
             }
+
             return View(phong);
         }
+        // Phương thức tạo mới trong AnhPhongsController để lưu ảnh và thông tin
+        private async Task CreateAnhPhong(string tenAnh, int idPhong)
+        {
+            var anhPhong = new AnhPhong
+            {
+                TenAnh = tenAnh,
+                NhomAnh = idPhong.ToString()
+            };
 
+            _context.Add(anhPhong);
+            await _context.SaveChangesAsync();
+        }
+
+        // Các hành động khác trong AnhPhongsController (Index, Details, Edit, Delete) không cần thay đổi
+        // GET: Phongs/Edit/5
         // GET: Phongs/Edit/5
         public async Task<IActionResult> Edit(int? id)
         {
@@ -142,9 +181,9 @@ namespace test3.Controllers
             if (phong != null)
             {
                 _context.Phongs.Remove(phong);
+                await _context.SaveChangesAsync();
             }
 
-            await _context.SaveChangesAsync();
             return RedirectToAction(nameof(Index));
         }
 

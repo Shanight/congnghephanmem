@@ -2,7 +2,7 @@
 
 @{
     ViewData["Title"] = "Index";
-        Layout = "~/Views/Shared/_AdminLayout.cshtml";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
 
 }
 
@@ -55,15 +55,15 @@
                                                     <i class="bi bi-pen"></i>
                                                 </a>
                                             </button>
-                                            <button type="button" class="btn btn-danger">
-                                                <a asp-action="Delete" asp-route-id="@item.Id">X</a>
 
-                                            </button>
+                                            <a asp-action="Delete" asp-route-id="@item.Id">
+                                                <button type="button" class="btn btn-danger">X</button>
+                                            </a>
+
+
                                         </td>
                                     </tr>
                                 }
-
-        
 
                             </tbody>
                         </table>
@@ -76,52 +76,3 @@
     </section>
 
 </main>
-
-<h1>Index</h1>
-
-<p>
-    <a >Create New</a>
-</p>
-<table class="table">
-    <thead>
-        <tr>
-            <th>
-                @Html.DisplayNameFor(model => model.TenPhong)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.HangPhong)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.GiaPhong)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.TrangThai)
-            </th>
-            <th></th>
-        </tr>
-    </thead>
-    <tbody>
-        @foreach (var item in Model)
-        {
-            <tr>
-                <td>
-                    @Html.DisplayFor(modelItem => item.TenPhong)
-                </td>
-                <td>
-                    @Html.DisplayFor(modelItem => item.HangPhong)
-                </td>
-                <td>
-                    @Html.DisplayFor(modelItem => item.GiaPhong)
-                </td>
-                <td>
-                    @Html.DisplayFor(modelItem => item.TrangThai)
-                </td>
-                <td>
-                    <a asp-action="Edit" asp-route-id="@item.Id">Edit</a> |
-                    <a asp-action="Details" asp-route-id="@item.Id">Details</a> |
-                    <a asp-action="Delete" asp-route-id="@item.Id">Delete</a>
-                </td>
-            </tr>
-        }
-    </tbody>
-</table>

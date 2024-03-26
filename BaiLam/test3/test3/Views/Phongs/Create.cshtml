@@ -5,46 +5,72 @@
     Layout = "~/Views/Shared/_AdminLayout.cshtml";
 
 }
+<main id="main" class="main">
 
-<h1>Create</h1>
+    <div class="pagetitle">
+        <h1>Thêm phòng</h1>
+        <nav>
+            <ol class="breadcrumb">
+                <li class="breadcrumb-item"><a href="index.html">Home</a></li>
+                <li class="breadcrumb-item active">Phòng</li>
+            </ol>
+        </nav>
+    </div><!-- End Page Title -->
 
-<h4>Phong</h4>
-<hr />
-<div class="row">
-    <div class="col-md-4">
-        <form asp-action="Create">
-            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
-            <div class="form-group">
-                <label asp-for="TenPhong" class="control-label"></label>
-                <input asp-for="TenPhong" class="form-control" />
-                <span asp-validation-for="TenPhong" class="text-danger"></span>
-            </div>
-            <div class="form-group">
-                <label asp-for="HangPhong" class="control-label"></label>
-                <input asp-for="HangPhong" class="form-control" />
-                <span asp-validation-for="HangPhong" class="text-danger"></span>
-            </div>
-            <div class="form-group">
-                <label asp-for="GiaPhong" class="control-label"></label>
-                <input asp-for="GiaPhong" class="form-control" />
-                <span asp-validation-for="GiaPhong" class="text-danger"></span>
-            </div>
-            <div class="form-group">
-                <label asp-for="TrangThai" class="control-label"></label>
-                <input asp-for="TrangThai" class="form-control" />
-                <span asp-validation-for="TrangThai" class="text-danger"></span>
-            </div>
-            <div class="form-group">
-                <input type="submit" value="Create" class="btn btn-primary" />
-            </div>
-        </form>
-    </div>
-</div>
+    <section class="section">
+        <div class="row">
+            <div class="card">
+                <div class="card-body">
+                    <h5 class="card-title">Thêm phòng</h5>
 
-<div>
-    <a asp-action="Index">Back to List</a>
-</div>
+                    <!-- Multi Columns Form -->
+                    <form class="row g-3" asp-action="Create" enctype="multipart/form-data">
+                        <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+
+                        <div class="col-md-12">
+                            <label asp-for="TenPhong" for="inputName5" class="form-label">Tên phòng</label>
+                            <input asp-for="TenPhong" type="text" class="form-control" id="inputName5">
+                            <span asp-validation-for="TenPhong" class="text-danger"></span>
+
+                        </div>
+                        <div class="col-md-6">
+                            <label asp-for="SoPhong" class="form-label">Số phòng</label>
+                            <input asp-for="SoPhong" class="form-control" />
+                            <span asp-validation-for="SoPhong" class="text-danger"></span>
+                        </div>
+                        <input asp-for="TrangThai" value="Trống" style="display: none" />
+                        <div class="col-md-6">
+                            <label asp-for="HangPhong" class="form-label">Hạng phòng</label>
+                            <input asp-for="HangPhong" class="form-control" />
+                            <span asp-validation-for="HangPhong" class="text-danger"></span>
+                        </div>
+                        <div class="col-md-6">
+                            <label asp-for="GiaPhong" class="form-label">Giá phòng</label>
+                            <input asp-for="GiaPhong" class="form-control" />
+                            <span asp-validation-for="GiaPhong" class="text-danger"></span>
+                        </div>
+                        <div class="col-md-6">
+                            <label class="form-label">Ảnh phòng</label>
+                            <input type="file" name="file" class="form-control" accept="image/*" multiple>
+                            <span
+                                class="text-danger">@(ViewData.ModelState["file"]?.Errors.FirstOrDefault()?.ErrorMessage)</span>
+                        </div>
+
+                        <div class="text-center">
+                            <button type="submit" class="btn btn-primary" value="Create">Submit</button>
+                            <a asp-action="Index"><button class="btn btn-secondary" style="button">Back</button></a>
+                        </div>
+                    </form><!-- End Multi Columns Form -->
+
+                </div>
+            </div>
+        </div>
+    </section>
+
+</main><!-- End #main -->
 
 @section Scripts {
-    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+    @{
+        await Html.RenderPartialAsync("_ValidationScriptsPartial");
+    }
 }
