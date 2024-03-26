@@ -13,6 +13,8 @@ builder.Services.AddSession();
 builder.Services.AddRazorPages();
 builder.Services.AddDbContext<ApplicationDbContext>(options =>
     options.UseSqlServer("Server=.\\SQLEXPRESS;Database=testcongnghephanmem1;User Id=sa;Password=123;Integrated Security=False;MultipleActiveResultSets=True;TrustServerCertificate=True"));
+
+builder.Services.AddDefaultIdentity<IdentityUser>(options => options.SignIn.RequireConfirmedAccount = true).AddEntityFrameworkStores<ApplicationDbContext>();
 builder.Services.AddControllersWithViews();
 var app = builder.Build();
 
