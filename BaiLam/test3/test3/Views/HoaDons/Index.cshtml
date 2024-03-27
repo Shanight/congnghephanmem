@@ -1,0 +1,146 @@
+﻿@model IEnumerable<test3.Models.HoaDon>
+
+@{
+    ViewData["Title"] = "Index";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+
+<main id="main" class="main">
+
+        <div class="pagetitle">
+            <h1>Hóa đơn</h1>
+            <nav>
+                <ol class="breadcrumb">
+                    <li class="breadcrumb-item"><a href="index.html">Home</a></li>
+                    <li class="breadcrumb-item">Quản lý</li>
+                    <li class="breadcrumb-item active">Hóa đơn</li>
+                </ol>
+            </nav>
+        </div><!-- End Page Title -->
+
+        <section class="section">
+            <div class="row">
+                <div class="col-12">
+                    <div class="card recent-sales overflow-auto">
+                        <div class="card-body">
+                            <table class="table table-borderless datatable">
+                                <thead>
+                                    <tr>
+                                        <th scope="col">ID</th>
+                                        <th scope="col">Tên khách hàng</th>
+                                        <th scope="col">Dịch vụ</th>
+                                        <th scope="col">Phòng</th>
+                                        <th scope="col">Tên nhân viên</th>
+                                        <th scope="col">Tổng</th>
+                                        <th scope="col">Tình trạng</th>
+                                        <th>Chi tiết</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    @foreach (var item in Model) {
+                                    <tr>
+                                        <th scope="row"><a href="#">1</a></th>
+                                        <td>@Html.DisplayFor(modelItem => item.IDDVSD)</td>
+                                        <td>@Html.DisplayFor(modelItem => item.MaDP)</td>
+                                        <td>@Html.DisplayFor(modelItem => item.TrangThai)</td>
+                                        <td>@Html.DisplayFor(modelItem => item.IDNV)</td>
+                                        <td>@Html.DisplayFor(modelItem => item.IDKH)</td>
+                                        <td>@Html.DisplayFor(modelItem => item.TongTien)</td>
+                                        <td>
+                                            <a asp-action="Edit" asp-route-id="@item.Id" style="color: white;">
+                                            <button type="button" class="btn btn-success">
+                                                <i class="bi bi-book"></i>
+                                            </button>
+                                            </a>
+                                            <a asp-action="Edit" asp-route-id="@item.Id">
+                                            <button type="button" class="btn btn-danger">
+                                                X
+                                            </button>
+                                            </a>
+                                        </td>
+                                    </tr>
+                                }
+                                    <script>
+                                        function deleteRow(button) {
+                                            // Traversing để tìm hàng <tr> chứa nút bấm
+                                            var row = button.closest('tr');
+                                    
+                                            // Xóa hàng
+                                            row.remove();
+                                        }
+                                    </script>
+                                </tbody>
+                            </table>
+
+                        </div>
+
+                    </div>
+                </div><!-- End Recent Sales -->
+            </div>
+        </section>
+
+    </main>
+
+
+
+
+<h1>Index</h1>
+
+<p>
+    <a asp-action="Create">Create New</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.IDDVSD)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.MaDP)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.TrangThai)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.IDNV)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.IDKH)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.TongTien)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.IDDVSD)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.MaDP)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.TrangThai)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.IDNV)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.IDKH)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.TongTien)
+            </td>
+            <td>
+                <a asp-action="Edit" asp-route-id="@item.Id">Edit</a> |
+                <a asp-action="Details" asp-route-id="@item.Id">Details</a> |
+                <a asp-action="Delete" asp-route-id="@item.Id">Delete</a>
+            </td>
+        </tr>
+}
+    </tbody>
+</table>

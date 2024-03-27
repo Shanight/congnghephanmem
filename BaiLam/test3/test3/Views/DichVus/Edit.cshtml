@@ -5,7 +5,66 @@
     Layout = "~/Views/Shared/_AdminLayout.cshtml";
 }
 
-<h1>Edit</h1>
+<main id="main" class="main">
+
+    <div class="pagetitle">
+        <h1>Sửa dịch vụ</h1>
+        <nav>
+            <ol class="breadcrumb">
+                <li class="breadcrumb-item"><a href="index.html">Home</a></li>
+                <li class="breadcrumb-item active">Dịch vụ</li>
+            </ol>
+        </nav>
+    </div><!-- End Page Title -->
+
+    <section class="section">
+        <div class="row">
+            <div class="card">
+                <div class="card-body">
+                    <h5 class="card-title">Sửa dịch vụ</h5>
+
+                    <!-- Multi Columns Form -->
+                    <form class="row g-3" asp-action="Edit">
+                        <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+                        <div class="col-md-6">
+                            <label asp-for="TenDV" class="form-label"></label>
+                            <input asp-for="TenDV" class="form-control" />
+                            <span asp-validation-for="TenDV" class="text-danger"></span>
+                        </div>
+                        <div class="col-md-6">
+                            <label asp-for="LoaiDV" class="form-label"></label>
+                            <input asp-for="LoaiDV" class="form-control" />
+                            <span asp-validation-for="LoaiDV" class="text-danger"></span>
+                        </div>
+                        <div class="col-md-6">
+                            <label asp-for="SoLuong" class="form-label"></label>
+                            <input asp-for="SoLuong" class="form-control" />
+                            <span asp-validation-for="SoLuong" class="text-danger"></span>
+                        </div>
+                        <div class="col-md-6">
+                            <label asp-for="Gia" class="form-label"></label>
+                            <input asp-for="Gia" class="form-control" />
+                            <span asp-validation-for="Gia" class="text-danger"></span>
+                        </div>
+                        <div class="col-md-12">
+                            <label asp-for="MoTa" class="form-label"></label>
+                            <input asp-for="MoTa" class="form-control" />
+                            <span asp-validation-for="MoTa" class="text-danger"></span>
+                        </div>
+                        <div class="text-center">
+                            <button type="submit" class="btn btn-primary">Lưu</button>
+                            <a asp-action="Index">
+                                <button type="reset" class="btn btn-secondary">Thoát</button>
+                            </a>
+                        </div>
+                    </form><!-- End Multi Columns Form -->
+
+                </div>
+            </div>
+        </div>
+    </section>
+
+</main>
 
 <h4>DichVu</h4>
 <hr />
@@ -30,6 +89,11 @@
                 <span asp-validation-for="Gia" class="text-danger"></span>
             </div>
             <div class="form-group">
+                <label asp-for="LoaiDV" class="control-label"></label>
+                <input asp-for="LoaiDV" class="form-control" />
+                <span asp-validation-for="LoaiDV" class="text-danger"></span>
+            </div>
+            <div class="form-group">
                 <input type="submit" value="Save" class="btn btn-primary" />
             </div>
         </form>
@@ -41,5 +105,7 @@
 </div>
 
 @section Scripts {
-    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+    @{
+        await Html.RenderPartialAsync("_ValidationScriptsPartial");
+    }
 }

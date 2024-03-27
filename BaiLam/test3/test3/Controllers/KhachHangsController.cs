@@ -7,24 +7,24 @@ using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.EntityFrameworkCore;
 using test3.Models;
 
-namespace test3.Views
+namespace test3.Controllers
 {
-    public class DichVusController : Controller
+    public class KhachHangsController : Controller
     {
         private readonly ApplicationDbContext _context;
 
-        public DichVusController(ApplicationDbContext context)
+        public KhachHangsController(ApplicationDbContext context)
         {
             _context = context;
         }
 
-        // GET: DichVus
+        // GET: KhachHangs
         public async Task<IActionResult> Index()
         {
-            return View(await _context.DichVus.ToListAsync());
+            return View(await _context.KhachHangs.ToListAsync());
         }
 
-        // GET: DichVus/Details/5
+        // GET: KhachHangs/Details/5
         public async Task<IActionResult> Details(int? id)
         {
             if (id == null)
@@ -32,39 +32,39 @@ namespace test3.Views
                 return NotFound();
             }
 
-            var dichVu = await _context.DichVus
+            var khachHang = await _context.KhachHangs
                 .FirstOrDefaultAsync(m => m.Id == id);
-            if (dichVu == null)
+            if (khachHang == null)
             {
                 return NotFound();
             }
 
-            return View(dichVu);
+            return View(khachHang);
         }
 
-        // GET: DichVus/Create
+        // GET: KhachHangs/Create
         public IActionResult Create()
         {
             return View();
         }
 
-        // POST: DichVus/Create
+        // POST: KhachHangs/Create
         // To protect from overposting attacks, enable the specific properties you want to bind to.
         // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Create([Bind("Id,TenDV,MoTa,Gia")] DichVu dichVu)
+        public async Task<IActionResult> Create([Bind("Id,TenKH,SDT,Email,GioiTinh,CCCD")] KhachHang khachHang)
         {
             if (ModelState.IsValid)
             {
-                _context.Add(dichVu);
+                _context.Add(khachHang);
                 await _context.SaveChangesAsync();
                 return RedirectToAction(nameof(Index));
             }
-            return View(dichVu);
+            return View(khachHang);
         }
 
-        // GET: DichVus/Edit/5
+        // GET: KhachHangs/Edit/5
         public async Task<IActionResult> Edit(int? id)
         {
             if (id == null)
@@ -72,22 +72,22 @@ namespace test3.Views
                 return NotFound();
             }
 
-            var dichVu = await _context.DichVus.FindAsync(id);
-            if (dichVu == null)
+            var khachHang = await _context.KhachHangs.FindAsync(id);
+            if (khachHang == null)
             {
                 return NotFound();
             }
-            return View(dichVu);
+            return View(khachHang);
         }
 
-        // POST: DichVus/Edit/5
+        // POST: KhachHangs/Edit/5
         // To protect from overposting attacks, enable the specific properties you want to bind to.
         // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Edit(int id, [Bind("Id,TenDV,MoTa,Gia")] DichVu dichVu)
+        public async Task<IActionResult> Edit(int id, [Bind("Id,TenKH,SDT,Email,GioiTinh,CCCD")] KhachHang khachHang)
         {
-            if (id != dichVu.Id)
+            if (id != khachHang.Id)
             {
                 return NotFound();
             }
@@ -96,12 +96,12 @@ namespace test3.Views
             {
                 try
                 {
-                    _context.Update(dichVu);
+                    _context.Update(khachHang);
                     await _context.SaveChangesAsync();
                 }
                 catch (DbUpdateConcurrencyException)
                 {
-                    if (!DichVuExists(dichVu.Id))
+                    if (!KhachHangExists(khachHang.Id))
                     {
                         return NotFound();
                     }
@@ -112,10 +112,10 @@ namespace test3.Views
                 }
                 return RedirectToAction(nameof(Index));
             }
-            return View(dichVu);
+            return View(khachHang);
         }
 
-        // GET: DichVus/Delete/5
+        // GET: KhachHangs/Delete/5
         public async Task<IActionResult> Delete(int? id)
         {
             if (id == null)
@@ -123,34 +123,34 @@ namespace test3.Views
                 return NotFound();
             }
 
-            var dichVu = await _context.DichVus
+            var khachHang = await _context.KhachHangs
                 .FirstOrDefaultAsync(m => m.Id == id);
-            if (dichVu == null)
+            if (khachHang == null)
             {
                 return NotFound();
             }
 
-            return View(dichVu);
+            return View(khachHang);
         }
 
-        // POST: DichVus/Delete/5
+        // POST: KhachHangs/Delete/5
         [HttpPost, ActionName("Delete")]
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> DeleteConfirmed(int id)
         {
-            var dichVu = await _context.DichVus.FindAsync(id);
-            if (dichVu != null)
+            var khachHang = await _context.KhachHangs.FindAsync(id);
+            if (khachHang != null)
             {
-                _context.DichVus.Remove(dichVu);
+                _context.KhachHangs.Remove(khachHang);
             }
 
             await _context.SaveChangesAsync();
             return RedirectToAction(nameof(Index));
         }
 
-        private bool DichVuExists(int id)
+        private bool KhachHangExists(int id)
         {
-            return _context.DichVus.Any(e => e.Id == id);
+            return _context.KhachHangs.Any(e => e.Id == id);
         }
     }
 }

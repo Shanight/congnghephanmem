@@ -307,7 +307,15 @@ namespace test3.Migrations
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
+                    b.Property<string>("LoaiDV")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
                     b.Property<string>("MoTa")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("SoLuong")
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
 

@@ -1,0 +1,131 @@
+﻿@model IEnumerable<test3.Models.DichVuSuDung>
+
+@{
+    ViewData["Title"] = "Index";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+<main id="main" class="main">
+
+        <div class="pagetitle">
+            <h1>Dịch vụ</h1>
+            <nav>
+                <ol class="breadcrumb">
+                    <li class="breadcrumb-item"><a href="index.html">Home</a></li>
+                    <li class="breadcrumb-item active">Dịch vụ</li>
+                </ol>
+                <nav style="text-align: right;"><a href="themdichvu.html">
+                    <button type="button" class="btn btn-info" style=""> + Thêm</button>
+                </a>
+            </nav>
+        </div><!-- End Page Title -->
+
+        <section class="section">
+            <div class="row">
+                <div class="col-12">
+                    <div class="card recent-sales overflow-auto">
+                        <div class="card-body">
+                            <table class="table table-borderless datatable">
+                                <thead>
+                                    <tr>
+                                        <th scope="col">ID dịch vụ</th>
+                                        <th scope="col">Tên dịch vụ</th>
+                                        <th scope="col">Loại dịch vụ</th>
+                                        <th scope="col">Mô tả</th>
+                                        <th scope="col">Giá</th>
+                                        <th>Chi tiết</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    
+                                    <tr>
+                                        <th scope="row"><a href="#">1</a></th>
+                                        <td>Cơm gà</td>
+                                        <td>Thức ăn</td>
+                                        <td>Cơm gà xối mở được làm ra bởi nghệ nhân</td>
+                                        <td>15$</td>
+                                        <td>
+                                            <button type="button" class="btn btn-success">
+                                                <a href="suadichvu.html" style="color: white"><i class="bi bi-pen"></i></a>
+                                            </button>
+                                            <button type="button" class="btn btn-danger" onclick="deleteRow(this)">
+                                                X
+                                            </button>
+                                        </td>
+                                    </tr>
+
+                                   
+                                    <script>
+                                        function deleteRow(button) {
+                                            // Traversing để tìm hàng <tr> chứa nút bấm
+                                            var row = button.closest('tr');
+                                    
+                                            // Xóa hàng
+                                            row.remove();
+                                        }
+                                    </script>
+
+                                </tbody>
+                            </table>
+
+                        </div>
+
+                    </div>
+                </div><!-- End Recent Sales -->
+            </div>
+        </section>
+
+    </main>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<p>
+    <a asp-action="Create">Create New</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.MaDP)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.IDDV)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.SoLuong)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.MaDP)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.IDDV)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.SoLuong)
+            </td>
+            <td>
+                <a asp-action="Edit" asp-route-id="@item.Id">Edit</a> |
+                <a asp-action="Details" asp-route-id="@item.Id">Details</a> |
+                <a asp-action="Delete" asp-route-id="@item.Id">Delete</a>
+            </td>
+        </tr>
+}
+    </tbody>
+</table>

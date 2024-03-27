@@ -1989,10 +1989,6 @@
       "PackagePath": "staticwebassets\\favicon.ico"
     },
     {
-      "Id": "D:\\congnghephanmem\\congnghephanmem\\BaiLam\\test3\\test3\\wwwroot\\imgupload\\anhphong\\AnhPhong49.png",
-      "PackagePath": "staticwebassets\\imgupload\\anhphong\\AnhPhong49.png"
-    },
-    {
       "Id": "D:\\congnghephanmem\\congnghephanmem\\BaiLam\\test3\\test3\\wwwroot\\js\\site.js",
       "PackagePath": "staticwebassets\\js\\site.js"
     },

@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "Qepj/3NuDMXQtn/ZldGDrOMvQs+AbphkXPwrtBeG4CU=",
+  "Hash": "qjjJWnWyRCCICgQdddz/BNWn6/a7mkRbDQqkvRBrn3M=",
   "Source": "test3",
   "BasePath": "_content/test3",
   "Mode": "Default",
@@ -10655,25 +10655,6 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\favicon.ico"
-    },
-    {
-      "Identity": "D:\\congnghephanmem\\congnghephanmem\\BaiLam\\test3\\test3\\wwwroot\\imgupload\\anhphong\\AnhPhong49.png",
-      "SourceId": "test3",
-      "SourceType": "Discovered",
-      "ContentRoot": "D:\\congnghephanmem\\congnghephanmem\\BaiLam\\test3\\test3\\wwwroot\\",
-      "BasePath": "_content/test3",
-      "RelativePath": "imgupload/anhphong/AnhPhong49.png",
-      "AssetKind": "All",
-      "AssetMode": "All",
-      "AssetRole": "Primary",
-      "AssetMergeBehavior": "PreferTarget",
-      "AssetMergeSource": "",
-      "RelatedAsset": "",
-      "AssetTraitName": "",
-      "AssetTraitValue": "",
-      "CopyToOutputDirectory": "Never",
-      "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "wwwroot\\imgupload\\anhphong\\AnhPhong49.png"
     },
     {
       "Identity": "D:\\congnghephanmem\\congnghephanmem\\BaiLam\\test3\\test3\\wwwroot\\js\\site.js",
