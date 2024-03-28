@@ -40,8 +40,14 @@
                         </div>
                         <input asp-for="TrangThai" value="Trống" style="display: none" />
                         <div class="col-md-6">
-                            <label asp-for="HangPhong" class="form-label">Hạng phòng</label>
-                            <input asp-for="HangPhong" class="form-control" />
+                            <label asp-for="HangPhong" class="control-label">Hạng phòng</label>
+
+                            <select asp-for="HangPhong" class="form-control">
+                                <option value="VIP">VIP</option>
+                                <option value="Family">Family</option>
+                                <option value="Phòng đôi">Phòng đôi</option>
+                                <option value="Phòng đơn">Phòng đơn</option>
+                            </select>
                             <span asp-validation-for="HangPhong" class="text-danger"></span>
                         </div>
                         <div class="col-md-6">
@@ -51,7 +57,7 @@
                         </div>
                         <div class="col-md-6">
                             <label class="form-label">Ảnh phòng</label>
-                            <input type="file" name="file" class="form-control" accept="image/*" multiple>
+                            <input type="file" name="photos" class="form-control" accept="image/*" multiple>
                             <span
                                 class="text-danger">@(ViewData.ModelState["file"]?.Errors.FirstOrDefault()?.ErrorMessage)</span>
                         </div>

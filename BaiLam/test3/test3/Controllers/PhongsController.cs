@@ -12,12 +12,13 @@ namespace test3.Controllers
     public class PhongsController : Controller
     {
         private readonly ApplicationDbContext _context;
+        private readonly IWebHostEnvironment _webHostEnvironment;
 
-        public PhongsController(ApplicationDbContext context)
+        public PhongsController(ApplicationDbContext context, IWebHostEnvironment webHostEnvironment)
         {
             _context = context;
+            _webHostEnvironment = webHostEnvironment;
         }
-
         // GET: Phongs
         public async Task<IActionResult> Index()
         {
@@ -58,29 +59,33 @@ namespace test3.Controllers
         // POST: Phongs/Create
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Create([Bind("Id,TenPhong,HangPhong,GiaPhong,TrangThai,SoPhong")] Phong phong, IFormFile file)
+        public async Task<IActionResult> Create([Bind("Id,TenPhong,HangPhong,GiaPhong,TrangThai,SoPhong")] Phong phong, List<IFormFile> photos)
         {
             if (ModelState.IsValid)
             {
                 _context.Add(phong);
                 await _context.SaveChangesAsync();
 
-                if (file != null && file.Length > 0)
+                if (photos != null && photos.Count > 0)
                 {
-                    // Tạo tên file mới
-                    string fileName = "AnhPhong" + phong.Id + ".png";
-
-                    // Lưu ảnh vào thư mục tạm
-                    string filePath = Path.Combine("wwwroot", "imgupload", "anhphong", fileName);
-                    using (var stream = new FileStream(filePath, FileMode.Create))
+                    foreach (var photo in photos)
                     {
-                        await file.CopyToAsync(stream);
+                        if (photo.Length > 0)
+                        {
+                            // Tạo tên file mới
+                            string fileName = "AnhPhong" + phong.Id + "_" + Guid.NewGuid().ToString() + ".png";
+
+                            // Lưu ảnh vào thư mục tạm
+                            string filePath = Path.Combine("wwwroot", "imgupload", "anhphong", fileName);
+                            using (var stream = new FileStream(filePath, FileMode.Create))
+                            {
+                                await photo.CopyToAsync(stream);
+                            }
+
+                            // Gọi phương thức Create trong AnhPhongsController và truyền thông tin ảnh và ID của phòng
+                            await CreateAnhPhong(fileName, phong.Id);
+                        }
                     }
-
-                    // Gọi phương thức Create trong AnhPhongsController và truyền thông tin ảnh và ID của phong
-                    await CreateAnhPhong(fileName, phong.Id);
-
-                    return RedirectToAction(nameof(Index));
                 }
 
                 return RedirectToAction(nameof(Index));
@@ -116,6 +121,11 @@ namespace test3.Controllers
             {
                 return NotFound();
             }
+            var anhPhongs = await _context.AnhPhongs
+       .Where(a => a.NhomAnh == id.ToString())
+       .Select(a => a.TenAnh)
+       .ToListAsync();
+            ViewBag.AnhPhongs = anhPhongs;
             return View(phong);
         }
 
@@ -124,7 +134,7 @@ namespace test3.Controllers
         // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Edit(int id, [Bind("Id,TenPhong,HangPhong,GiaPhong,TrangThai,SoPhong")] Phong phong)
+        public async Task<IActionResult> Edit(int id, [Bind("Id,TenPhong,HangPhong,GiaPhong,TrangThai,SoPhong")] Phong phong, List<IFormFile> photos)
         {
             if (id != phong.Id)
             {
@@ -137,6 +147,39 @@ namespace test3.Controllers
                 {
                     _context.Update(phong);
                     await _context.SaveChangesAsync();
+
+                    if (photos != null && photos.Count > 0)
+                    {
+                        await DeleteAnhPhong(phong.Id);
+
+                        foreach (var photo in photos)
+                        {
+                            if (photo.Length > 0)
+                            {
+                                // Generate a new file name
+                                string fileName = "AnhPhong" + phong.Id + "_" + Guid.NewGuid().ToString() + Path.GetExtension(photo.FileName);
+
+                                // Define the relative path for saving the image
+                                string relativePath = Path.Combine("imgupload", "anhphong", fileName);
+
+                                // Get the absolute file path on the server
+                                string filePath = Path.Combine(Directory.GetCurrentDirectory(), "wwwroot", relativePath);
+
+                                // Save the image file to the server
+                                using (var stream = new FileStream(filePath, FileMode.Create))
+                                {
+                                    await photo.CopyToAsync(stream);
+                                }
+
+                                // Call the Create method in the AnhPhongsController and pass the image information and the room ID
+                                await CreateAnhPhong(fileName, phong.Id);
+                            }
+                        }
+                    }
+
+
+
+                    return RedirectToAction(nameof(Index));
                 }
                 catch (DbUpdateConcurrencyException)
                 {
@@ -149,9 +192,45 @@ namespace test3.Controllers
                         throw;
                     }
                 }
-                return RedirectToAction(nameof(Index));
             }
+
             return View(phong);
+        }
+
+        //xoaanh
+        private async Task DeleteImage(int id)
+        {
+            var anhPhong = await _context.AnhPhongs.FindAsync(id);
+
+            if (anhPhong != null)
+            {
+                _context.AnhPhongs.Remove(anhPhong);
+                await _context.SaveChangesAsync();
+            }
+        }
+
+
+        // Phương thức xóa trong AnhPhongsController để xóa ảnh
+        private async Task DeleteAnhPhong(int idPhong)
+        {
+            var anhPhongs = await _context.AnhPhongs
+                .Where(a => a.NhomAnh == idPhong.ToString())
+                .ToListAsync();
+
+            foreach (var anhPhong in anhPhongs)
+            {
+                // Xóa ảnh từ thư mục lưu trữ
+                string filePath = Path.Combine(_webHostEnvironment.WebRootPath, "imgupload", "anhphong", anhPhong.TenAnh);
+                if (System.IO.File.Exists(filePath))
+                {
+                    System.IO.File.Delete(filePath);
+                }
+
+                // Xóa ảnh từ cơ sở dữ liệu
+                _context.AnhPhongs.Remove(anhPhong);
+            }
+
+            await _context.SaveChangesAsync();
         }
 
         // GET: Phongs/Delete/5

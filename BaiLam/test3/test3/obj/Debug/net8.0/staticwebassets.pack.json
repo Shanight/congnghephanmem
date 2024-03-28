@@ -1989,6 +1989,30 @@
       "PackagePath": "staticwebassets\\favicon.ico"
     },
     {
+      "Id": "D:\\congnghephanmem\\congnghephanmem\\BaiLam\\test3\\test3\\wwwroot\\imgupload\\anhphong\\AnhPhong52_094d16cc-a2bf-477a-a11a-cb889b362506.jpg",
+      "PackagePath": "staticwebassets\\imgupload\\anhphong\\AnhPhong52_094d16cc-a2bf-477a-a11a-cb889b362506.jpg"
+    },
+    {
+      "Id": "D:\\congnghephanmem\\congnghephanmem\\BaiLam\\test3\\test3\\wwwroot\\imgupload\\anhphong\\AnhPhong54_0218f9a8-9874-4a0a-9b66-0582c4c16f97.png",
+      "PackagePath": "staticwebassets\\imgupload\\anhphong\\AnhPhong54_0218f9a8-9874-4a0a-9b66-0582c4c16f97.png"
+    },
+    {
+      "Id": "D:\\congnghephanmem\\congnghephanmem\\BaiLam\\test3\\test3\\wwwroot\\imgupload\\anhphong\\AnhPhong54_2130063c-580a-43e2-9eb9-109fecf8cb5b.png",
+      "PackagePath": "staticwebassets\\imgupload\\anhphong\\AnhPhong54_2130063c-580a-43e2-9eb9-109fecf8cb5b.png"
+    },
+    {
+      "Id": "D:\\congnghephanmem\\congnghephanmem\\BaiLam\\test3\\test3\\wwwroot\\imgupload\\anhphong\\AnhPhong54_2811e44c-796b-49b9-ae8d-abc1394ebf90.png",
+      "PackagePath": "staticwebassets\\imgupload\\anhphong\\AnhPhong54_2811e44c-796b-49b9-ae8d-abc1394ebf90.png"
+    },
+    {
+      "Id": "D:\\congnghephanmem\\congnghephanmem\\BaiLam\\test3\\test3\\wwwroot\\imgupload\\anhphong\\AnhPhong54_d8adb4cc-e8b1-4553-b692-2016b9d197f6.png",
+      "PackagePath": "staticwebassets\\imgupload\\anhphong\\AnhPhong54_d8adb4cc-e8b1-4553-b692-2016b9d197f6.png"
+    },
+    {
+      "Id": "D:\\congnghephanmem\\congnghephanmem\\BaiLam\\test3\\test3\\wwwroot\\imgupload\\anhphong\\AnhPhong55_154ae09b-d54b-4a54-adab-5de7eb56a8c8.png",
+      "PackagePath": "staticwebassets\\imgupload\\anhphong\\AnhPhong55_154ae09b-d54b-4a54-adab-5de7eb56a8c8.png"
+    },
+    {
       "Id": "D:\\congnghephanmem\\congnghephanmem\\BaiLam\\test3\\test3\\wwwroot\\js\\site.js",
       "PackagePath": "staticwebassets\\js\\site.js"
     },

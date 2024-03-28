@@ -47,8 +47,18 @@
                                         <td>@Html.DisplayFor(modelItem => item.TenPhong)</td>
                                         <td>@Html.DisplayFor(modelItem => item.HangPhong)</td>
                                         <td>$@Html.DisplayFor(modelItem => item.GiaPhong)</td>
-                                        <td><span class="badge bg-success">@Html.DisplayFor(modelItem =>
-                                            item.TrangThai)</span></td>
+                                        <td>
+                                            @if (item.TrangThai == "Đang thuê")
+                                            {
+                                                <span class="badge bg-danger">@Html.DisplayFor(modelItem =>
+                                            item.TrangThai)</span>
+                                            }
+                                            else
+                                            {
+                                                <span class="badge bg-success">@Html.DisplayFor(modelItem =>
+                                            item.TrangThai)</span>
+                                            }
+                                        </td>
                                         <td>
                                             <button type="button" class="btn btn-success">
                                                 <a asp-action="Edit" asp-route-id="@item.Id" style="color:white">

@@ -6,46 +6,86 @@
 
 }
 
-<h1>Edit</h1>
 
-<h4>Phong</h4>
-<hr />
-<div class="row">
-    <div class="col-md-4">
-        <form asp-action="Edit">
-            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
-            <input type="hidden" asp-for="Id" />
-            <div class="form-group">
-                <label asp-for="TenPhong" class="control-label"></label>
-                <input asp-for="TenPhong" class="form-control" />
-                <span asp-validation-for="TenPhong" class="text-danger"></span>
-            </div>
-            <div class="form-group">
-                <label asp-for="HangPhong" class="control-label"></label>
-                <input asp-for="HangPhong" class="form-control" />
-                <span asp-validation-for="HangPhong" class="text-danger"></span>
-            </div>
-            <div class="form-group">
-                <label asp-for="GiaPhong" class="control-label"></label>
-                <input asp-for="GiaPhong" class="form-control" />
-                <span asp-validation-for="GiaPhong" class="text-danger"></span>
-            </div>
-            <div class="form-group">
-                <label asp-for="TrangThai" class="control-label"></label>
-                <input asp-for="TrangThai" class="form-control" />
-                <span asp-validation-for="TrangThai" class="text-danger"></span>
-            </div>
-            <div class="form-group">
-                <input type="submit" value="Save" class="btn btn-primary" />
-            </div>
-        </form>
-    </div>
-</div>
+<main id="main" class="main">
 
-<div>
-    <a asp-action="Index">Back to List</a>
+    <div class="pagetitle">
+        <h1>Sửa phòng</h1>
+        <nav>
+            <ol class="breadcrumb">
+                <li class="breadcrumb-item"><a href="index.html">Home</a></li>
+                <li class="breadcrumb-item active">Phòng</li>
+            </ol>
+        </nav>
+    </div><!-- End Page Title -->
+
+    <section class="section">
+        <div class="row">
+            <div class="card">
+                <div class="card-body">
+                    <h5 class="card-title">Thêm phòng</h5>
+
+                    <!-- Multi Columns Form -->
+                   <form class="row g-3" asp-action="Edit" enctype="multipart/form-data">
+                        <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+                        <input type="hidden" asp-for="Id" />
+                        <input type="hidden" asp-for="TrangThai" />
+                        <div class="col-md-6">
+                            <label asp-for="SoPhong" class="control-label">Số phòng</label>
+                            <input asp-for="SoPhong" class="form-control" />
+                            <span asp-validation-for="SoPhong" class="text-danger"></span>
+                        </div>
+                        <div class="col-md-6">
+                            <label asp-for="TenPhong" class="control-label">Tên phòng</label>
+                            <input asp-for="TenPhong" class="form-control" />
+                            <span asp-validation-for="TenPhong" class="text-danger"></span>
+                        </div>
+                        <div class="col-md-6">
+    <label asp-for="HangPhong" class="control-label">Hạng phòng</label>
+    <select asp-for="HangPhong" class="form-control">
+        <option value="VIP">VIP</option>
+        <option value="Family">Family</option>
+        <option value="Phòng đôi">Phòng đôi</option>
+        <option value="Phòng đơn">Phòng đơn</option>
+    </select>
+    <span asp-validation-for="HangPhong" class="text-danger"></span>
 </div>
+                        <div class="col-md-6">
+                            <label asp-for="GiaPhong" class="control-label">Giá phòng</label>
+                            <input asp-for="GiaPhong" class="form-control" />
+                            <span asp-validation-for="GiaPhong" class="text-danger"></span>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="photos">Ảnh Phòng</label>
+                            <input type="file" name="photos" id="photos" multiple class="form-control">
+                        </div>
+
+                        @if (ViewBag.AnhPhongs != null && ViewBag.AnhPhongs.Count > 0)
+                        {
+                            <div class="form-group">
+                                <label>Ảnh hiện tại:</label>
+                                @foreach (var anhPhong in ViewBag.AnhPhongs)
+                                {
+                                    <img src="@Url.Content("~/imgupload/anhphong/" + anhPhong)" alt="Ảnh phòng" class="img-thumbnail" style="max-width: 200px; margin-right: 10px;">
+                                }
+                            </div>
+                        }
+                        <div class="col-12">
+                            <button type="submit" class="btn btn-primary">Lưu</button>
+                        </div>
+                    </form><!-- End Multi Columns Form -->
+
+                </div>
+            </div>
+        </div>
+    </section>
+
+</main>
+
 
 @section Scripts {
-    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+    @{
+        await Html.RenderPartialAsync("_ValidationScriptsPartial");
+    }
 }
