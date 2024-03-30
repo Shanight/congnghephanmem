@@ -25,7 +25,7 @@
                     <h5 class="card-title">Thêm dịch vụ</h5>
 
                     <!-- Multi Columns Form -->
-                    <form class="row g-3" asp-action="Create">
+                    <form class="row g-3" asp-action="Create" enctype="multipart/form-data">
                         <div asp-validation-summary="ModelOnly" class="text-danger"></div>
 
                         <div class="col-md-12">
@@ -39,18 +39,33 @@
                             <span asp-validation-for="MoTa" class="text-danger"></span>
                         </div>
                         <div class="col-md-6">
-                            <label asp-for="LoaiDV" class="form-label">Loại dịch vụ</label>
-                            <input asp-for="LoaiDV" class="form-control" />
+                            <label asp-for="LoaiDV" class="control-label">Loại dịch vụ</label>
+
+                            <select asp-for="LoaiDV" class="form-control">
+                                <option value="Thức ăn">Thức ăn</option>
+                                <option value="Dịch vụ khác">Dịch vụ khác</option>
+                            </select>
                             <span asp-validation-for="LoaiDV" class="text-danger"></span>
                         </div>
                         <div class="col-md-6">
                             <label asp-for="Gia" class="form-label">Giá</label>
-                            <input asp-for="Gia" class="form-control" />
+                            <input asp-for="Gia" class="form-control" type="number"/>
                             <span asp-validation-for="Gia" class="text-danger"></span>
+                        </div>
+                        <div class="col-md-6">
+                            <label asp-for="SoLuong" class="form-label">Số lượng</label>
+                            <input asp-for="SoLuong" type="number" class="form-control" value="1"/>
+                            <span asp-validation-for="SoLuong" class="text-danger"></span>
+                        </div>
+                        <div class="col-md-6">
+                            <label class="form-label">Ảnh dịch vụ</label>
+                            <input type="file" name="photos" class="form-control" accept="image/*" multiple>
+                            <span
+                                class="text-danger">@(ViewData.ModelState["file"]?.Errors.FirstOrDefault()?.ErrorMessage)</span>
                         </div>
 
                         <div class="text-center">
-                            <button type="submit" class="btn btn-primary">Lưu</button>
+                            <button type="submit" class="btn btn-primary"  value="Create">Lưu</button>
                             <a asp-action="Index">
                                 <button type="reset" class="btn btn-secondary">Thoát</button>
                             </a>
@@ -66,44 +81,6 @@
 </main>
 
 
-<h1>Create</h1>
-
-<h4>DichVu</h4>
-<hr />
-<div class="row">
-    <div class="col-md-4">
-        <form asp-action="Create">
-            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
-            <div class="form-group">
-                <label asp-for="TenDV" class="control-label"></label>
-                <input asp-for="TenDV" class="form-control" />
-                <span asp-validation-for="TenDV" class="text-danger"></span>
-            </div>
-            <div class="form-group">
-                <label asp-for="MoTa" class="control-label"></label>
-                <input asp-for="MoTa" class="form-control" />
-                <span asp-validation-for="MoTa" class="text-danger"></span>
-            </div>
-            <div class="form-group">
-                <label asp-for="Gia" class="control-label"></label>
-                <input asp-for="Gia" class="form-control" />
-                <span asp-validation-for="Gia" class="text-danger"></span>
-            </div>
-            <div class="form-group">
-                <label asp-for="LoaiDV" class="control-label"></label>
-                <input asp-for="LoaiDV" class="form-control" />
-                <span asp-validation-for="LoaiDV" class="text-danger"></span>
-            </div>
-            <div class="form-group">
-                <input type="submit" value="Create" class="btn btn-primary" />
-            </div>
-        </form>
-    </div>
-</div>
-
-<div>
-    <a asp-action="Index">Back to List</a>
-</div>
 
 @section Scripts {
     @{

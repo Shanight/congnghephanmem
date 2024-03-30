@@ -26,7 +26,7 @@
                     <h5 class="card-title">Thêm phòng</h5>
 
                     <!-- Multi Columns Form -->
-                   <form class="row g-3" asp-action="Edit" enctype="multipart/form-data">
+                    <form class="row g-3" asp-action="Edit" enctype="multipart/form-data">
                         <div asp-validation-summary="ModelOnly" class="text-danger"></div>
                         <input type="hidden" asp-for="Id" />
                         <input type="hidden" asp-for="TrangThai" />
@@ -41,15 +41,15 @@
                             <span asp-validation-for="TenPhong" class="text-danger"></span>
                         </div>
                         <div class="col-md-6">
-    <label asp-for="HangPhong" class="control-label">Hạng phòng</label>
-    <select asp-for="HangPhong" class="form-control">
-        <option value="VIP">VIP</option>
-        <option value="Family">Family</option>
-        <option value="Phòng đôi">Phòng đôi</option>
-        <option value="Phòng đơn">Phòng đơn</option>
-    </select>
-    <span asp-validation-for="HangPhong" class="text-danger"></span>
-</div>
+                            <label asp-for="HangPhong" class="control-label">Hạng phòng</label>
+                            <select asp-for="HangPhong" class="form-control">
+                                <option value="VIP">VIP</option>
+                                <option value="Family">Family</option>
+                                <option value="Phòng đôi">Phòng đôi</option>
+                                <option value="Phòng đơn">Phòng đơn</option>
+                            </select>
+                            <span asp-validation-for="HangPhong" class="text-danger"></span>
+                        </div>
                         <div class="col-md-6">
                             <label asp-for="GiaPhong" class="control-label">Giá phòng</label>
                             <input asp-for="GiaPhong" class="form-control" />
@@ -67,7 +67,8 @@
                                 <label>Ảnh hiện tại:</label>
                                 @foreach (var anhPhong in ViewBag.AnhPhongs)
                                 {
-                                    <img src="@Url.Content("~/imgupload/anhphong/" + anhPhong)" alt="Ảnh phòng" class="img-thumbnail" style="max-width: 200px; margin-right: 10px;">
+                                    <img src="@Url.Content("~/imgupload/anhphong/" + anhPhong)" alt="Ảnh phòng"
+                                        class="img-thumbnail" style="max-width: 200px; margin-right: 10px;">
                                 }
                             </div>
                         }

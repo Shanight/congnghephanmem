@@ -12,10 +12,17 @@ namespace test3.Controllers
     public class NhanViensController : Controller
     {
         private readonly ApplicationDbContext _context;
+        private readonly IWebHostEnvironment _webHostEnvironment;
+        private readonly IWebHostEnvironment _hostingEnvironment;
 
-        public NhanViensController(ApplicationDbContext context)
+
+        public NhanViensController(ApplicationDbContext context, IWebHostEnvironment webHostEnvironment, IWebHostEnvironment hostingEnvironment)
         {
             _context = context;
+            _webHostEnvironment = webHostEnvironment;
+            _hostingEnvironment = hostingEnvironment;
+
+
         }
 
         // GET: NhanViens
@@ -53,10 +60,22 @@ namespace test3.Controllers
         // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Create([Bind("Id,TenNV,GioiTinh,NgaySinh,AnhDaiDien,DiaChi,SDT,Email,NgayVaoLam,TinhTrang,MucLuong")] NhanVien nhanVien)
+        public async Task<IActionResult> Create([Bind("Id,TenNV,GioiTinh,NgaySinh,AnhDaiDien,DiaChi,SDT,Email,NgayVaoLam,TinhTrang,MucLuong,ViTri")] NhanVien nhanVien, IFormFile photo)
         {
             if (ModelState.IsValid)
             {
+                DateTime ngayHienTai = DateTime.Now;
+                string tenAnhDaiDien = nhanVien.TenNV + "_" + nhanVien.Id.ToString() + "_" + ngayHienTai.ToString("yyyyMMddHHmmss");
+
+                string thuMucAnhDaiDien = Path.Combine(_hostingEnvironment.WebRootPath, "imgupload/anhdaidien");
+                string duongDanAnhDaiDien = Path.Combine(thuMucAnhDaiDien, tenAnhDaiDien + ".png");
+                using (var stream = new FileStream(duongDanAnhDaiDien, FileMode.Create))
+                {
+                    await photo.CopyToAsync(stream);
+                }
+
+                nhanVien.AnhDaiDien = "/imgupload/anhdaidien/" + tenAnhDaiDien + ".png";
+
                 _context.Add(nhanVien);
                 await _context.SaveChangesAsync();
                 return RedirectToAction(nameof(Index));
@@ -81,39 +100,72 @@ namespace test3.Controllers
         }
 
         // POST: NhanViens/Edit/5
-        // To protect from overposting attacks, enable the specific properties you want to bind to.
-        // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
-        [HttpPost]
-        [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Edit(int id, [Bind("Id,TenNV,GioiTinh,NgaySinh,AnhDaiDien,DiaChi,SDT,Email,NgayVaoLam,TinhTrang,MucLuong")] NhanVien nhanVien)
+[HttpPost]
+[ValidateAntiForgeryToken]
+public async Task<IActionResult> Edit(int id, [Bind("Id,TenNV,GioiTinh,NgaySinh,DiaChi,SDT,Email,NgayVaoLam,TinhTrang,MucLuong,ViTri")] NhanVien nhanVien, IFormFile photo)
+{
+    if (id != nhanVien.Id)
+    {
+        return NotFound();
+    }
+
+    if (ModelState.IsValid)
+    {
+        try
         {
-            if (id != nhanVien.Id)
+            var existingNhanVien = await _context.NhanViens.FindAsync(id);
+
+            if (photo != null)
+            {
+                // Xóa ảnh cũ
+                if (!string.IsNullOrEmpty(existingNhanVien.AnhDaiDien))
+                {
+                    string duongDanAnhCu = Path.Combine(_hostingEnvironment.WebRootPath, existingNhanVien.AnhDaiDien.TrimStart('/'));
+                    if (System.IO.File.Exists(duongDanAnhCu))
+                    {
+                        System.IO.File.Delete(duongDanAnhCu);
+                    }
+                }
+
+                // Tải lên ảnh mới
+                DateTime ngayHienTai = DateTime.Now;
+                string tenAnhDaiDien = nhanVien.TenNV + "_" + nhanVien.Id.ToString() + "_" + ngayHienTai.ToString("yyyyMMddHHmmss");
+
+                string thuMucAnhDaiDien = Path.Combine(_hostingEnvironment.WebRootPath, "imgupload/anhdaidien");
+                string duongDanAnhDaiDien = Path.Combine(thuMucAnhDaiDien, tenAnhDaiDien + ".png");
+
+                using (var stream = new FileStream(duongDanAnhDaiDien, FileMode.Create))
+                {
+                    await photo.CopyToAsync(stream);
+                }
+
+                nhanVien.AnhDaiDien = "/imgupload/anhdaidien/" + tenAnhDaiDien + ".png";
+            }
+            else
+            {
+                // Giữ ảnh cũ
+                nhanVien.AnhDaiDien = existingNhanVien.AnhDaiDien;
+            }
+
+            _context.Update(nhanVien);
+            await _context.SaveChangesAsync();
+        }
+        catch (DbUpdateConcurrencyException)
+        {
+            if (!NhanVienExists(nhanVien.Id))
             {
                 return NotFound();
             }
-
-            if (ModelState.IsValid)
+            else
             {
-                try
-                {
-                    _context.Update(nhanVien);
-                    await _context.SaveChangesAsync();
-                }
-                catch (DbUpdateConcurrencyException)
-                {
-                    if (!NhanVienExists(nhanVien.Id))
-                    {
-                        return NotFound();
-                    }
-                    else
-                    {
-                        throw;
-                    }
-                }
-                return RedirectToAction(nameof(Index));
+                throw;
             }
-            return View(nhanVien);
         }
+        return RedirectToAction(nameof(Index));
+    }
+
+    return View(nhanVien);
+}
 
         // GET: NhanViens/Delete/5
         public async Task<IActionResult> Delete(int? id)

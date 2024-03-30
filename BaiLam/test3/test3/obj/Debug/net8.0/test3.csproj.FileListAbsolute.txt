@@ -595,7 +595,6 @@ D:\congnghephanmem\congnghephanmem\BaiLam\test3\test3\obj\Debug\net8.0\staticweb
 D:\congnghephanmem\congnghephanmem\BaiLam\test3\test3\obj\Debug\net8.0\scopedcss\Views\Shared\_Layout.cshtml.rz.scp.css
 D:\congnghephanmem\congnghephanmem\BaiLam\test3\test3\obj\Debug\net8.0\scopedcss\bundle\test3.styles.css
 D:\congnghephanmem\congnghephanmem\BaiLam\test3\test3\obj\Debug\net8.0\scopedcss\projectbundle\test3.bundle.scp.css
-D:\congnghephanmem\congnghephanmem\BaiLam\test3\test3\obj\Debug\net8.0\test3.csproj.CopyComplete
 D:\congnghephanmem\congnghephanmem\BaiLam\test3\test3\obj\Debug\net8.0\test3.dll
 D:\congnghephanmem\congnghephanmem\BaiLam\test3\test3\obj\Debug\net8.0\refint\test3.dll
 D:\congnghephanmem\congnghephanmem\BaiLam\test3\test3\obj\Debug\net8.0\test3.pdb
@@ -606,3 +605,4 @@ D:\congnghephanmem\congnghephanmem\BaiLam\test3\test3\bin\Debug\net8.0\Microsoft
 D:\congnghephanmem\congnghephanmem\BaiLam\test3\test3\bin\Debug\net8.0\Microsoft.AspNetCore.Components.QuickGrid.EntityFrameworkAdapter.dll
 D:\congnghephanmem\congnghephanmem\BaiLam\test3\test3\bin\Debug\net8.0\Microsoft.AspNetCore.Components.Web.dll
 D:\congnghephanmem\congnghephanmem\BaiLam\test3\test3\bin\Debug\net8.0\Microsoft.JSInterop.dll
+D:\congnghephanmem\congnghephanmem\BaiLam\test3\test3\obj\Debug\net8.0\test3.csproj.Up2Date

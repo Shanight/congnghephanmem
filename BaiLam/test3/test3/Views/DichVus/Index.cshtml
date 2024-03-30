@@ -3,137 +3,85 @@
 @{
     ViewData["Title"] = "Index";
     Layout = "~/Views/Shared/_AdminLayout.cshtml";
+    int count = 1;
 }
-
-
 
 <main id="main" class="main">
 
-        <div class="pagetitle">
-            <h1>Dịch vụ</h1>
-            <nav>
-                <ol class="breadcrumb">
-                    <li class="breadcrumb-item"><a href="index.html">Home</a></li>
-                    <li class="breadcrumb-item active">Dịch vụ</li>
-                </ol>
-                <nav style="text-align: right;">
-                    <a asp-action="Create">
+    <div class="pagetitle">
+        <h1>Dịch vụ</h1>
+        <nav>
+            <ol class="breadcrumb">
+                <li class="breadcrumb-item"><a href="index.html">Home</a></li>
+                <li class="breadcrumb-item active">Dịch vụ</li>
+            </ol>
+            <nav style="text-align: right;">
+                <a asp-action="Create">
                     <button type="button" class="btn btn-info" style=""> + Thêm</button>
                 </a>
             </nav>
-        </div><!-- End Page Title -->
+    </div><!-- End Page Title -->
 
-        <section class="section">
-            <div class="row">
-                <div class="col-12">
-                    <div class="card recent-sales overflow-auto">
-                        <div class="card-body">
-                            <table class="table table-borderless datatable">
-                                <thead>
-                                    <tr>
-                                        <th scope="col">ID dịch vụ</th>
-                                        <th scope="col">Tên dịch vụ</th>
-                                        <th scope="col">Loại dịch vụ</th>
-                                        <th scope="col">Mô tả</th>
-                                        <th scope="col">Giá</th>
-                                        <th scope="col">Số lượng</th>
-                                        <th>Chi tiết</th>
-                                    </tr>
-                                </thead>
-                                <tbody>
+    <section class="section">
+        <div class="row">
+            <div class="col-12">
+                <div class="card recent-sales overflow-auto">
+                    <div class="card-body">
+                        <table class="table table-borderless datatable">
+                            <thead>
+                                <tr>
+                                    <th scope="col">ID dịch vụ</th>
+                                    <th scope="col">Tên dịch vụ</th>
+                                    <th scope="col">Loại dịch vụ</th>
+                                    <th scope="col">Mô tả</th>
+                                    <th scope="col">Giá</th>
+                                    <th scope="col">Số lượng</th>
+                                    <th>Chi tiết</th>
+                                </tr>
+                            </thead>
+                            <tbody>
                                 @foreach (var item in Model)
                                 {
-                <tr>
-                    <th scope="row"><a href="#">1</a></th>
-                    <td>@Html.DisplayFor(modelItem => item.TenDV)</td>
-                    <td>@Html.DisplayFor(modelItem => item.LoaiDV)</td>
-                    <td>@Html.DisplayFor(modelItem => item.MoTa)</td>
-                    <td>@Html.DisplayFor(modelItem => item.Gia)$</td>
-                    <td>@Html.DisplayFor(modelItem => item.SoLuong)</td>
-                    <td>
-                        <a asp-action="Edit" asp-route-id="@item.Id" style="color: white">
-                        <button type="button" class="btn btn-success">
-                            <i class="bi bi-pen"></i>
-                        </button>
-                        </a>
-                        <a asp-action="Delete" asp-route-id="@item.Id">
-                        <button type="button" class="btn btn-danger" >
-                            X
-                        </button>
-                        </a>
-                    </td>
-                </tr>
-                        }
+                                    <tr>
+                                        <th scope="row">@count</th>
+                                        <td>@Html.DisplayFor(modelItem => item.TenDV)</td>
+                                        <td>@Html.DisplayFor(modelItem => item.LoaiDV)</td>
+                                        <td>@Html.DisplayFor(modelItem => item.MoTa)</td>
+                                        <td>@Html.DisplayFor(modelItem => item.Gia)đ</td>
+                                        <td>@Html.DisplayFor(modelItem => item.SoLuong)</td>
+                                        <td>
+                                            <a asp-action="Edit" asp-route-id="@item.Id" style="color: white">
+                                                <button type="button" class="btn btn-success">
+                                                    <i class="bi bi-pen"></i>
+                                                </button>
+                                            </a>
+                                            <a asp-action="Delete" asp-route-id="@item.Id">
+                                                <button type="button" class="btn btn-danger">
+                                                    X
+                                                </button>
+                                            </a>
+                                        </td>
+                                    </tr>
+                                    count++;
+                                }
 
-                                    <script>
-                                        function deleteRow(button) {
-                                            // Traversing để tìm hàng <tr> chứa nút bấm
-                                            var row = button.closest('tr');
+                                <script>
+                                    function deleteRow(button) {
+                                        // Traversing để tìm hàng <tr> chứa nút bấm
+                                        var row = button.closest('tr');
+                                        // Xóa hàng
+                                        row.remove();
+                                    }
+                                </script>
 
-                                            // Xóa hàng
-                                            row.remove();
-                                        }
-                                    </script>
-
-                                </tbody>
-                            </table>
-
-                        </div>
+                            </tbody>
+                        </table>
 
                     </div>
-                </div><!-- End Recent Sales -->
-            </div>
-        </section>
 
-    </main>
+                </div>
+            </div><!-- End Recent Sales -->
+        </div>
+    </section>
 
-
-
-<h1>Index</h1>
-
-<p>
-    <a asp-action="Create">Create New</a>
-</p>
-<table class="table">
-    <thead>
-        <tr>
-            <th>
-                @Html.DisplayNameFor(model => model.TenDV)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.MoTa)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.Gia)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.LoaiDV)
-            </th>
-            <th></th>
-        </tr>
-    </thead>
-    <tbody>
-        @foreach (var item in Model)
-        {
-                    <tr>
-                        <td>
-                    @Html.DisplayFor(modelItem => item.TenDV)
-                        </td>
-                        <td>
-                    @Html.DisplayFor(modelItem => item.MoTa)
-                        </td>
-                        <td>
-                    @Html.DisplayFor(modelItem => item.Gia)
-                        </td>
-                        <td>
-                    @Html.DisplayFor(modelItem => item.LoaiDV)
-                        </td>
-                        <td>
-                            <a asp-action="Edit" asp-route-id="@item.Id">Edit</a> |
-                            <a asp-action="Details" asp-route-id="@item.Id">Details</a> |
-                            <a asp-action="Delete" asp-route-id="@item.Id">Delete</a>
-                        </td>
-                    </tr>
-        }
-    </tbody>
-</table>
+</main>

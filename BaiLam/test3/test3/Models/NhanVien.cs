@@ -11,7 +11,8 @@ namespace test3.Models{
     public string Email { get; set; }
     public string NgayVaoLam { get; set; }
     public string TinhTrang { get; set; }
-    public string MucLuong { get; set; }
-    // Thêm các trường khác nếu cần
-}
+        public int MucLuong { get; set; }
+        public string ViTri { get; set; }
+        // Thêm các trường khác nếu cần
+    }
 }
