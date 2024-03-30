@@ -8,66 +8,69 @@
 
 <main id="main" class="main">
 
-        <div class="pagetitle">
-            <h1>Sửa nhân viên</h1>
-            <nav>
-                <ol class="breadcrumb">
-                    <li class="breadcrumb-item"><a href="index.html">Home</a></li>
-                    <li class="breadcrumb-item active">Nhân viên</li>
-                </ol>
-            </nav>
-        </div><!-- End Page Title -->
+    <div class="pagetitle">
+        <h1>Sửa khách hàng</h1>
+        <nav>
+            <ol class="breadcrumb">
+                <li class="breadcrumb-item"><a href="index.html">Home</a></li>
+                <li class="breadcrumb-item active">Khách hàng</li>
+            </ol>
+        </nav>
+    </div><!-- End Page Title -->
 
-        <section class="section">
-            <div class="row">
-                <div class="card">
-                    <div class="card-body">
-                      <h5 class="card-title">Sửa nhân viên</h5>
-        
-                      <!-- Multi Columns Form -->
-                      <form class="row g-3" asp-action="Edit">
-                            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+    <section class="section">
+        <div class="row">
+            <div class="card">
+                <div class="card-body">
+                    <h5 class="card-title">Sửa khách hàng</h5>
+
+                    <!-- Multi Columns Form -->
+                    <form class="row g-3" asp-action="Edit">
+                        <div asp-validation-summary="ModelOnly" class="text-danger"></div>
                         <div class="col-md-12">
-                        <label asp-for="TenKH" class="form-label"></label>
-                        <input asp-for="TenKH" class="form-control" />
-                        <span asp-validation-for="TenKH" class="text-danger"></span>
+                            <label asp-for="TenKH" class="form-label">Tên khách hàng</label>
+                            <input asp-for="TenKH" class="form-control" />
+                            <span asp-validation-for="TenKH" class="text-danger"></span>
                         </div>
                         <div class="col-md-6">
-                            <label asp-for="GioiTinh" class="form-label"></label>
-                            <input asp-for="GioiTinh" class="form-control" />
+                            <label asp-for="GioiTinh" class="form-label">Giới tính</label>
+                            <select asp-for="GioiTinh" class="form-control">
+                                <option value="Nam">Nam</option>
+                                <option value="Nữ">Nữ</option>
+                            </select>
                             <span asp-validation-for="GioiTinh" class="text-danger"></span>
                         </div>
-                          <div class="col-md-6">
-                            <label asp-for="SDT" class="form-label"></label>
-                            <input asp-for="SDT" class="form-control" />
+                        <div class="col-md-6">
+                            <label asp-for="SDT" class="form-label">Số điện thoại</label>
+                            <input asp-for="SDT" class="form-control" type="tel" />
                             <span asp-validation-for="SDT" class="text-danger"></span>
-                          </div>
-                          <div class="col-md-6">
-                            <label asp-for="Email" class="form-label"></label>
-                            <input asp-for="Email" class="form-control" />
+                        </div>
+                        <div class="col-md-6">
+                            <label asp-for="Email" class="form-label">Email</label>
+                            <input asp-for="Email" class="form-control" type="email"/>
                             <span asp-validation-for="Email" class="text-danger"></span>
-                          </div>
-                          <div class="col-md-6">
-                            <label asp-for="CCCD" class="form-label"></label>
+                        </div>
+                        <div class="col-md-6">
+                            <label asp-for="CCCD" class="form-label">CMND/CCCD</label>
                             <input asp-for="CCCD" class="form-control" />
                             <span asp-validation-for="CCCD" class="text-danger"></span>
-                          </div>
-                        
-                        <div class="text-center">
-                          <button type="submit" class="btn btn-primary">Lưu</button>
-                          <a asp-action="Index">
-                            <button type="reset" class="btn btn-secondary">Thoát</button>
-                          </a>
-                          
                         </div>
-                      </form><!-- End Multi Columns Form -->
-        
-                    </div>
-                  </div>
-            </div>
-        </section>
 
-    </main>
+                        <div class="text-center">
+                            <button type="submit" class="btn btn-primary">Lưu</button>
+                            <a asp-action="Index">
+                                <button  class="btn btn-secondary">Thoát</button>
+                            </a>
+
+                        </div>
+                    </form><!-- End Multi Columns Form -->
+
+                </div>
+            </div>
+        </div>
+    </section>
+
+</main>
 
 
 <h1>Edit</h1>
@@ -116,5 +119,7 @@
 </div>
 
 @section Scripts {
-    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+    @{
+        await Html.RenderPartialAsync("_ValidationScriptsPartial");
+    }
 }

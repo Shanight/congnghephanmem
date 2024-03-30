@@ -27,6 +27,8 @@
           <!-- Multi Columns Form -->
           <form class="row g-3" asp-action="Edit" method="post" enctype="multipart/form-data">
             <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <input type="hidden" asp-for="Id" />
+
             <div class="col-md-6">
               <label asp-for="TenNV" class="form-label">Tên nhân viên</label>
               <input asp-for="TenNV" class="form-control" />
@@ -55,10 +57,9 @@
             </div>
             <div class="col-md-6">
               <label asp-for="AnhDaiDien" class="form-label">Ảnh đại diện</label>
-              <input asp-for="AnhDaiDien" class="form-control" value="1123" style="display: none;" />
+              <input asp-for="AnhDaiDien" type="hidden">
               <input class="form-control" name="photo" type="file" accept="image/*" />
               <span asp-validation-for="AnhDaiDien" class="text-danger"></span>
-
             </div>
             <div class="col-md-6">
               @if (!string.IsNullOrEmpty(Model.AnhDaiDien))
@@ -119,78 +120,6 @@
   </section>
 
 </main>
-
-
-
-<h1>Edit</h1>
-
-<h4>NhanVien</h4>
-<hr />
-<div class="row">
-  <div class="col-md-4">
-    <form asp-action="Edit">
-      <div asp-validation-summary="ModelOnly" class="text-danger"></div>
-      <input type="hidden" asp-for="Id" />
-      <div class="form-group">
-        <label asp-for="TenNV" class="control-label"></label>
-        <input asp-for="TenNV" class="form-control" />
-        <span asp-validation-for="TenNV" class="text-danger"></span>
-      </div>
-      <div class="form-group">
-        <label asp-for="GioiTinh" class="control-label"></label>
-        <input asp-for="GioiTinh" class="form-control" />
-        <span asp-validation-for="GioiTinh" class="text-danger"></span>
-      </div>
-      <div class="form-group">
-        <label asp-for="NgaySinh" class="control-label"></label>
-        <input asp-for="NgaySinh" class="form-control" />
-        <span asp-validation-for="NgaySinh" class="text-danger"></span>
-      </div>
-      <div class="form-group">
-        <label asp-for="AnhDaiDien" class="control-label"></label>
-        <input asp-for="AnhDaiDien" class="form-control" />
-        <span asp-validation-for="AnhDaiDien" class="text-danger"></span>
-      </div>
-      <div class="form-group">
-        <label asp-for="DiaChi" class="control-label"></label>
-        <input asp-for="DiaChi" class="form-control" />
-        <span asp-validation-for="DiaChi" class="text-danger"></span>
-      </div>
-      <div class="form-group">
-        <label asp-for="SDT" class="control-label"></label>
-        <input asp-for="SDT" class="form-control" />
-        <span asp-validation-for="SDT" class="text-danger"></span>
-      </div>
-      <div class="form-group">
-        <label asp-for="Email" class="control-label"></label>
-        <input asp-for="Email" class="form-control" />
-        <span asp-validation-for="Email" class="text-danger"></span>
-      </div>
-      <div class="form-group">
-        <label asp-for="NgayVaoLam" class="control-label"></label>
-        <input asp-for="NgayVaoLam" class="form-control" />
-        <span asp-validation-for="NgayVaoLam" class="text-danger"></span>
-      </div>
-      <div class="form-group">
-        <label asp-for="TinhTrang" class="control-label"></label>
-        <input asp-for="TinhTrang" class="form-control" />
-        <span asp-validation-for="TinhTrang" class="text-danger"></span>
-      </div>
-      <div class="form-group">
-        <label asp-for="MucLuong" class="control-label"></label>
-        <input asp-for="MucLuong" class="form-control" />
-        <span asp-validation-for="MucLuong" class="text-danger"></span>
-      </div>
-      <div class="form-group">
-        <input type="submit" value="Save" class="btn btn-primary" />
-      </div>
-    </form>
-  </div>
-</div>
-
-<div>
-  <a asp-action="Index">Back to List</a>
-</div>
 
 @section Scripts {
   @{

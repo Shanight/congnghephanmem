@@ -16,11 +16,10 @@ namespace test3.Models
         public DbSet<DichVu> DichVus { get; set; }
         public DbSet<DichVuSuDung> DichVuSuDungs { get; set; }
         public DbSet<HoaDon> HoaDons { get; set; }
-        public DbSet<HoaDonChiTiet> HoaDonChiTiets { get; set; }
         public DbSet<KhachHang> KhachHangs { get; set; }
         public DbSet<NhanVien> NhanViens { get; set; }
         public DbSet<Phong> Phongs { get; set; }
-
+        public object DatPhongs { get; internal set; }
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {

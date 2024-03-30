@@ -53,7 +53,7 @@ namespace test3.Controllers
         // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Create([Bind("Id,IDDVSD,MaDP,TrangThai,IDNV,IDKH,TongTien")] HoaDon hoaDon)
+        public async Task<IActionResult> Create([Bind("Id,IDDVSD,MaDP,TrangThai,IDNV,IDKH,TongTien,NgayDat,NgayNhan,NgayTra")] HoaDon hoaDon)
         {
             if (ModelState.IsValid)
             {
@@ -85,7 +85,7 @@ namespace test3.Controllers
         // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Edit(int id, [Bind("Id,IDDVSD,MaDP,TrangThai,IDNV,IDKH,TongTien")] HoaDon hoaDon)
+        public async Task<IActionResult> Edit(int id, [Bind("Id,IDDVSD,MaDP,TrangThai,IDNV,IDKH,TongTien,NgayDat,NgayNhan,NgayTra")] HoaDon hoaDon)
         {
             if (id != hoaDon.Id)
             {

@@ -1,3 +1,5 @@
+using System.ComponentModel.DataAnnotations;
+
 namespace test3.Models{
     public class NhanVien
 {
@@ -5,7 +7,8 @@ namespace test3.Models{
     public string TenNV { get; set; }
     public string GioiTinh { get; set; }
     public string NgaySinh { get; set; }
-    public string AnhDaiDien { get; set; }
+
+        public string AnhDaiDien { get; set; }
     public string DiaChi { get; set; }
     public string SDT { get; set; }
     public string Email { get; set; }

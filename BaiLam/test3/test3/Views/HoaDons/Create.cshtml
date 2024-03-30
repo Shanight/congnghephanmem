@@ -4,6 +4,242 @@
     ViewData["Title"] = "Create";
     Layout = "~/Views/Shared/_AdminLayout.cshtml";
 }
+<main id="main" class="main">
+    <div class="pagetitle">
+        <h1>Đặt phòng</h1>
+        <nav>
+            <ol class="breadcrumb" style="width: 100%;">
+                <li class="breadcrumb-item"><a href="index.html">Home</a></li>
+                <li class="breadcrumb-item">Quản lý</li>
+                <li class="breadcrumb-item active">Hóa Đơn</li>
+            </ol>
+        </nav>
+    </div><!-- End Page Title -->
+    <section class="section profile">
+        <div class="row">
+            <div class="col-xl-8">
+
+                <div class="card recent-sales overflow-auto" style="">
+                    <div class="card-body">
+                        <table class="table table-borderless datatable">
+                            <thead>
+                                <tr>
+                                    <th scope="col">ID</th>
+                                    <th scope="col">Tên dịch vụ</th>
+                                    <th scope="col">Số lượng</th>
+                                    <th scope="col">Giá($)</th>
+                                    <th scope="col">Tổng tiền($)</th>
+                                    <th>Chi tiết</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <th scope="row"><a href="#">1</a></th>
+                                    <td>Cơm gà Hải Nam</td>
+                                    <td>2</td>
+                                    <td>30</td>
+                                    <td>60$</td>
+                                    <td>
+                                        <button type="button" class="btn btn-danger" onclick="deleteRow(this)">
+                                            X
+                                        </button>
+                                    </td>
+                                </tr>
+
+                                <tr>
+                                    <th scope="row"><a href="#">1</a></th>
+                                    <td>Cơm gà Hải Nam</td>
+                                    <td>2</td>
+                                    <td>30</td>
+                                    <td>60$</td>
+                                    <td>
+                                        <button type="button" class="btn btn-danger" onclick="deleteRow(this)">
+                                            X
+                                        </button>
+                                    </td>
+                                </tr>
+
+                                <tr>
+                                    <th scope="row"><a href="#">1</a></th>
+                                    <td>Cơm gà Hải Nam</td>
+                                    <td>2</td>
+                                    <td>30</td>
+                                    <td>60$</td>
+                                    <td>
+                                        <button type="button" class="btn btn-danger" onclick="deleteRow(this)">
+                                            X
+                                        </button>
+                                    </td>
+                                </tr>
+
+                                <tr>
+                                    <th scope="row"><a href="#">1</a></th>
+                                    <td>Cơm gà Hải Nam</td>
+                                    <td>2</td>
+                                    <td>30</td>
+                                    <td>60$</td>
+                                    <td>
+                                        <button type="button" class="btn btn-danger" onclick="deleteRow(this)">
+                                            X
+                                        </button>
+                                    </td>
+                                </tr>
+                                <script>
+                                    function deleteRow(button) {
+                                        // Traversing để tìm hàng <tr> chứa nút bấm
+                                        var row = button.closest('tr');
+
+                                        // Xóa hàng
+                                        row.remove();
+                                    }
+                                </script>
+                            </tbody>
+                        </table>
+
+                    </div>
+
+                </div>
+
+                <div class="col-12" style="text-align: center;">
+                    <button type="submit" class="btn btn-primary">Lưu</button>
+                    <button type="submit" class="btn btn-danger">Thoát</button>
+                </div>
+
+            </div>
+
+            <div class="col-xl-4">
+
+                <div class="card">
+                    <div class="card-body pt-3">
+                        <!-- Bordered Tabs -->
+                        <ul class="nav nav-tabs nav-tabs-bordered">
+
+                            <li class="nav-item">
+                                <button class="nav-link active" data-bs-toggle="tab"
+                                    data-bs-target="#profile-overview">Thông tin</button>
+                            </li>
+
+                            <li class="nav-item">
+                                <button class="nav-link" data-bs-toggle="tab" data-bs-target="#profile-edit">Chi
+                                    tiết phòng</button>
+                            </li>
+
+                        </ul>
+                        <div class="tab-content pt-2">
+
+                            <div class="tab-pane fade show active profile-overview" id="profile-overview">
+                                <h5 class="card-title">Thông tin</h5>
+
+                                <div class="row">
+                                    <div class="col-lg-3 col-md-4 label ">Họ và tên</div>
+                                    <div class="col-lg-9 col-md-8"><input type="text" class="form-control"></div>
+                                </div>
+
+                                <div class="row">
+                                    <div class="col-lg-3 col-md-4 label">Giới tính</div>
+                                    <div class="col-lg-9 col-md-8"><select name="phong" id="phong" class="form-control">
+                                            <option value="Thường">Nam</option>
+                                            <option value="Thường">Nữ</option>
+                                        </select></div>
+                                </div>
+
+
+                                <div class="row">
+                                    <div class="col-lg-3 col-md-4 label">Số điện thoại</div>
+                                    <div class="col-lg-9 col-md-8"><input type="tel" name="" id="" class="form-control">
+                                    </div>
+                                </div>
+
+                                <div class="row">
+                                    <div class="col-lg-3 col-md-4 label">Email</div>
+                                    <div class="col-lg-9 col-md-8"><input type="email" name="" id=""
+                                            class="form-control"></div>
+                                </div>
+
+                                <div class="row">
+                                    <div class="col-lg-3 col-md-4 label">CCCD</div>
+                                    <div class="col-lg-9 col-md-8"><input type="text" class="form-control"></div>
+                                </div>
+
+                                <h5 class="card-title">Nhân viên</h5>
+
+                                <div class="row">
+                                    <div class="col-lg-3 col-md-4 label ">Họ và tên</div>
+                                    <div class="col-lg-9 col-md-8"><select name="phong" id="phong" class="form-control">
+                                            <option value="Thường">--Vui lòng chọn--</option>
+                                            <option value="Thường">NGuyễn Văn A</option>
+                                            <option value="Thường">Nguyễn văn B</option>
+                                        </select></div>
+                                </div>
+                            </div>
+
+                            <div class="tab-pane fade profile-overview pt-3 " id="profile-edit">
+
+                                <h5 class="card-title">Chi tiết phòng</h5>
+
+                                <div class="row">
+                                    <div class="col-lg-3 col-md-4 label ">Hạng phòng</div>
+                                    <div class="col-lg-9 col-md-8">
+                                        <select name="phong" id="phong" class="form-control">
+                                            <option value="Thường">VIP</option>
+                                            <option value="Thường">Thường</option>
+                                        </select>
+                                    </div>
+                                </div>
+
+                                <div class="row">
+                                    <div class="col-lg-3 col-md-4 label ">Phòng</div>
+                                    <div class="col-lg-9 col-md-8">
+                                        <select name="phong" id="phong" class="form-control">
+                                            <option value="Thường">P.101</option>
+                                            <option value="Thường">P.204</option>
+                                            <option value="Thường">P.301</option>
+                                        </select>
+                                    </div>
+                                </div>
+
+                                <div class="row">
+                                    <div class="col-lg-3 col-md-4 label ">Ngày nhận</div>
+                                    <div class="col-lg-9 col-md-8">
+                                        <input name="company" type="date" class="form-control" id="company"
+                                            value="02/10/2000">
+                                    </div>
+                                </div>
+
+                                <div class="row">
+                                    <div class="col-lg-3 col-md-4 label ">Ngày trả</div>
+                                    <div class="col-lg-9 col-md-8">
+                                        <input name="company" type="date" class="form-control" id="company"
+                                            value="02/10/2000">
+                                    </div>
+                                </div>
+
+                                <div class="row">
+                                    <div class="col-lg-3 col-md-4 label ">Tình trạng</div>
+                                    <div class="col-lg-9 col-md-8">
+                                        <select name="phong" id="phong" class="form-control">
+                                            <option value="Thường">Đã thanh toán</option>
+                                            <option value="Thường">Chưa thanh toán</option>
+                                            <option value="Thường">Đang thuê</option>
+                                        </select>
+                                    </div>
+                                </div>
+
+                            </div>
+
+
+
+                        </div><!-- End Bordered Tabs -->
+
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+    <!-- Script để xử lý sự kiện khi nhấn vào button Lưu -->
+</main>
+
 
 <h1>Create</h1>
 
@@ -55,5 +291,7 @@
 </div>
 
 @section Scripts {
-    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+    @{
+        await Html.RenderPartialAsync("_ValidationScriptsPartial");
+    }
 }
