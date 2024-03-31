@@ -49,12 +49,12 @@
                         </div>
                         <div class="col-md-6">
                             <label asp-for="Gia" class="form-label">Giá</label>
-                            <input asp-for="Gia" class="form-control" type="number"/>
+                            <input asp-for="Gia" class="form-control" type="number" min="1000" step="1000"/>
                             <span asp-validation-for="Gia" class="text-danger"></span>
                         </div>
                         <div class="col-md-6">
                             <label asp-for="SoLuong" class="form-label">Số lượng</label>
-                            <input asp-for="SoLuong" type="number" class="form-control" value="1"/>
+                            <input asp-for="SoLuong" type="number" class="form-control" value="1" min="1"/>
                             <span asp-validation-for="SoLuong" class="text-danger"></span>
                         </div>
                         <div class="col-md-6">

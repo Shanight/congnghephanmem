@@ -25,10 +25,10 @@
           <h5 class="card-title">Sửa nhân viên</h5>
 
           <!-- Multi Columns Form -->
-          <form class="row g-3" asp-action="Edit" method="post" enctype="multipart/form-data">
+          <form class="row g-3" asp-action="Edit" enctype="multipart/form-data">
             <div asp-validation-summary="ModelOnly" class="text-danger"></div>
             <input type="hidden" asp-for="Id" />
-
+            <span asp-validation-for="Id" class="text-danger"></span>
             <div class="col-md-6">
               <label asp-for="TenNV" class="form-label">Tên nhân viên</label>
               <input asp-for="TenNV" class="form-control" />
@@ -57,18 +57,17 @@
             </div>
             <div class="col-md-6">
               <label asp-for="AnhDaiDien" class="form-label">Ảnh đại diện</label>
-              <input asp-for="AnhDaiDien" type="hidden">
+              <input asp-for="AnhDaiDien" style="display: none;">
               <input class="form-control" name="photo" type="file" accept="image/*" />
               <span asp-validation-for="AnhDaiDien" class="text-danger"></span>
             </div>
             <div class="col-md-6">
-              @if (!string.IsNullOrEmpty(Model.AnhDaiDien))
-              {
-                <div>
-                  <img src="@Url.Content(Model.AnhDaiDien)" alt="AnhDaiDien" class="img-thumbnail"
-                    style="max-width: 200px;" />
-                </div>
-              }
+
+              <div>
+                <img src="@Url.Content(Model.AnhDaiDien)" alt="AnhDaiDien" class="img-thumbnail"
+                  style="max-width: 200px;" />
+              </div>
+
             </div>
             <div class="col-md-12">
               <label asp-for="DiaChi" class="form-label">Địa chỉ</label>

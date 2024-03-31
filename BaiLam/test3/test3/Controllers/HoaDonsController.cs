@@ -90,27 +90,39 @@ namespace test3.Controllers
 */
         [HttpPost]
         [ValidateAntiForgeryToken]
-
-        public IActionResult Create(HoaDon hoaDon)
+        public async Task<IActionResult> Create(HoaDon hoaDon)
         {
             if (ModelState.IsValid)
             {
-                
                 _context.Add(hoaDon);
-                _context.SaveChanges();
-                return RedirectToAction("Index");
+                await _context.SaveChangesAsync();
 
+                // Process service usage data
+                foreach (var dichVu in _context.DichVus)
+                {
+                    var quantityFieldName = $"quantity-{dichVu.Id}";
+                    var quantityValue = Request.Form[quantityFieldName].ToString();
+                    if (!string.IsNullOrEmpty(quantityValue) && int.TryParse(quantityValue, out int quantity) && quantity > 0)
+                    {
+                        var dichVuSuDung = new DichVuSuDung
+                        {
+                            MaDP = hoaDon.Id.ToString(),
+                            IDDV = dichVu.Id.ToString(),
+                            SoLuong = quantity.ToString()
+                        };
+                        _context.Add(dichVuSuDung);
+                    }
+                }
+
+                await _context.SaveChangesAsync();
+                return RedirectToAction(nameof(Index));
             }
-            ViewBag.Phongs = _context.Phongs.ToList();
-            ViewBag.DichVus = _context.DichVus.ToList();
-            ViewBag.NhanViens = _context.NhanViens.ToList();
-            ViewBag.KhachHangs = _context.KhachHangs.ToList();
-            ViewBag.AnhPhongs = _context.AnhPhongs.ToList();
 
             return View(hoaDon);
         }
 
         // GET: HoaDons/Edit/5
+        [HttpGet]
         public async Task<IActionResult> Edit(int? id)
         {
             if (id == null)
@@ -119,16 +131,21 @@ namespace test3.Controllers
             }
 
             var hoaDon = await _context.HoaDons.FindAsync(id);
+            ViewBag.Phongs = _context.Phongs.ToList();
+            ViewBag.DichVus = _context.DichVus.ToList();
+            ViewBag.NhanViens = _context.NhanViens.ToList();
+            ViewBag.KhachHangs = _context.KhachHangs.ToList();
+            ViewBag.AnhPhongs = _context.AnhPhongs.ToList();
+            ViewBag.DichVuSuDungs = _context.DichVuSuDungs.Where(d => d.MaDP == id.ToString()).ToList();
+
             if (hoaDon == null)
             {
                 return NotFound();
             }
+
             return View(hoaDon);
         }
 
-        // POST: HoaDons/Edit/5
-        // To protect from overposting attacks, enable the specific properties you want to bind to.
-        // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> Edit(int id, [Bind("Id,MaPhong,TrangThai,IDNV,IDKH,TongTien,NgayDat,NgayNhan,NgayTra")] HoaDon hoaDon)
@@ -143,6 +160,18 @@ namespace test3.Controllers
                 try
                 {
                     _context.Update(hoaDon);
+
+                    foreach (var dichVuSuDung in ViewBag.DichVuSuDungs)
+                    {
+                        var quantityFieldName = $"quantity-{dichVuSuDung.Id}";
+                        var quantityValue = Request.Form[quantityFieldName].ToString();
+                        if (!string.IsNullOrEmpty(quantityValue) && int.TryParse(quantityValue, out int quantity))
+                        {
+                            dichVuSuDung.SoLuong = quantity;
+                            _context.Update(dichVuSuDung);
+                        }
+                    }
+
                     await _context.SaveChangesAsync();
                 }
                 catch (DbUpdateConcurrencyException)
@@ -158,9 +187,9 @@ namespace test3.Controllers
                 }
                 return RedirectToAction(nameof(Index));
             }
+
             return View(hoaDon);
         }
-
         // GET: HoaDons/Delete/5
         public async Task<IActionResult> Delete(int? id)
         {

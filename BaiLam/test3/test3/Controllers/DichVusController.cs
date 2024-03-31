@@ -187,16 +187,6 @@ namespace test3.Controllers
             return View(dichVu);
         }
 
-        private async Task DeleteImage(int id)
-        {
-            var anhDichVu = await _context.AnhDichVus.FindAsync(id);
-
-            if (anhDichVu != null)
-            {
-                _context.AnhDichVus.Remove(anhDichVu);
-                await _context.SaveChangesAsync();
-            }
-        }
 
         private async Task DeleteAnhDichVu(int idDichVu)
         {

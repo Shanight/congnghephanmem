@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "vHdWcH/k5pt1+aDJ45ynXX4zOit7+JtEmHxQWO/U5h0=",
+  "Hash": "RiZxg0PmaEhx327LayEbUbmjRAFvTlB03xFMzUP4/n4=",
   "Source": "test3",
   "BasePath": "_content/test3",
   "Mode": "Default",
@@ -10714,25 +10714,6 @@
       "OriginalItemSpec": "wwwroot\\imgupload\\anhdaidien\\Nguyễn Văn A_0_20240330131213.png"
     },
     {
-      "Identity": "D:\\congnghephanmem\\congnghephanmem\\BaiLam\\test3\\test3\\wwwroot\\imgupload\\anhdaidien\\Nguyễn Văn A_0_20240331131257.png",
-      "SourceId": "test3",
-      "SourceType": "Discovered",
-      "ContentRoot": "D:\\congnghephanmem\\congnghephanmem\\BaiLam\\test3\\test3\\wwwroot\\",
-      "BasePath": "_content/test3",
-      "RelativePath": "imgupload/anhdaidien/Nguyễn Văn A_0_20240331131257.png",
-      "AssetKind": "All",
-      "AssetMode": "All",
-      "AssetRole": "Primary",
-      "AssetMergeBehavior": "PreferTarget",
-      "AssetMergeSource": "",
-      "RelatedAsset": "",
-      "AssetTraitName": "",
-      "AssetTraitValue": "",
-      "CopyToOutputDirectory": "Never",
-      "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "wwwroot\\imgupload\\anhdaidien\\Nguyễn Văn A_0_20240331131257.png"
-    },
-    {
       "Identity": "D:\\congnghephanmem\\congnghephanmem\\BaiLam\\test3\\test3\\wwwroot\\imgupload\\anhdaidien\\Nguyễn Văn A_6_20240330213021.png",
       "SourceId": "test3",
       "SourceType": "Discovered",
@@ -10828,6 +10809,25 @@
       "OriginalItemSpec": "wwwroot\\imgupload\\anhdaidien\\Nguyễn Văn A_6_20240330213424.png"
     },
     {
+      "Identity": "D:\\congnghephanmem\\congnghephanmem\\BaiLam\\test3\\test3\\wwwroot\\imgupload\\anhdaidien\\Nguyễn Văn A88_1_20240331203947.png",
+      "SourceId": "test3",
+      "SourceType": "Discovered",
+      "ContentRoot": "D:\\congnghephanmem\\congnghephanmem\\BaiLam\\test3\\test3\\wwwroot\\",
+      "BasePath": "_content/test3",
+      "RelativePath": "imgupload/anhdaidien/Nguyễn Văn A88_1_20240331203947.png",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "PreferTarget",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\imgupload\\anhdaidien\\Nguyễn Văn A88_1_20240331203947.png"
+    },
+    {
       "Identity": "D:\\congnghephanmem\\congnghephanmem\\BaiLam\\test3\\test3\\wwwroot\\imgupload\\anhdaidien\\Nguyễn Văn B_0_20240330130007.png",
       "SourceId": "test3",
       "SourceType": "Discovered",
@@ -10845,6 +10845,25 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\imgupload\\anhdaidien\\Nguyễn Văn B_0_20240330130007.png"
+    },
+    {
+      "Identity": "D:\\congnghephanmem\\congnghephanmem\\BaiLam\\test3\\test3\\wwwroot\\imgupload\\anhdaidien\\Nguyễn Văn C_2_20240331203758.png",
+      "SourceId": "test3",
+      "SourceType": "Discovered",
+      "ContentRoot": "D:\\congnghephanmem\\congnghephanmem\\BaiLam\\test3\\test3\\wwwroot\\",
+      "BasePath": "_content/test3",
+      "RelativePath": "imgupload/anhdaidien/Nguyễn Văn C_2_20240331203758.png",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "PreferTarget",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\imgupload\\anhdaidien\\Nguyễn Văn C_2_20240331203758.png"
     },
     {
       "Identity": "D:\\congnghephanmem\\congnghephanmem\\BaiLam\\test3\\test3\\wwwroot\\imgupload\\anhdichvu\\AnhDichVu_ID2_7855861a-c720-4cec-9af3-b6b1e4081808.jpg",
@@ -10940,6 +10959,25 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\imgupload\\anhdichvu\\AnhDV_1_69677195-f9d1-43fe-ba06-a365b000ff71.png"
+    },
+    {
+      "Identity": "D:\\congnghephanmem\\congnghephanmem\\BaiLam\\test3\\test3\\wwwroot\\imgupload\\anhdichvu\\AnhDV_2_fb361029-c3c6-4444-b93c-7644eefbd258.png",
+      "SourceId": "test3",
+      "SourceType": "Discovered",
+      "ContentRoot": "D:\\congnghephanmem\\congnghephanmem\\BaiLam\\test3\\test3\\wwwroot\\",
+      "BasePath": "_content/test3",
+      "RelativePath": "imgupload/anhdichvu/AnhDV_2_fb361029-c3c6-4444-b93c-7644eefbd258.png",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "PreferTarget",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\imgupload\\anhdichvu\\AnhDV_2_fb361029-c3c6-4444-b93c-7644eefbd258.png"
     },
     {
       "Identity": "D:\\congnghephanmem\\congnghephanmem\\BaiLam\\test3\\test3\\wwwroot\\imgupload\\anhphong\\AnhPhong1_417151af-bde7-41ab-8a91-c39655547563.png",

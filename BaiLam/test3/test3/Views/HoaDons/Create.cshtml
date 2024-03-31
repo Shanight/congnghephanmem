@@ -5,7 +5,6 @@
     ViewData["Title"] = "Create";
     Layout = "~/Views/Shared/_AdminLayout.cshtml";
     var selectedKhachHangId = (int?)null;
-
 }
 <main id="main" class="main">
     <div class="pagetitle">
@@ -29,10 +28,7 @@
                             <button class="nav-link active" data-bs-toggle="tab"
                                 data-bs-target="#profile-overview">Phòng</button>
                         </li>
-                        <li class="nav-item">
-                            <button class="nav-link " data-bs-toggle="tab" data-bs-target="#profile-dichvu">Dịch
-                                vụ</button>
-                        </li>
+
 
                         <li class="nav-item">
                             <button class="nav-link" data-bs-toggle="tab" data-bs-target="#profile-khachhang">Khách
@@ -88,76 +84,7 @@
                             </div>
                         </div>
 
-                        <div class="tab-pane fade profile-overview pt-3 " id="profile-dichvu">
 
-                            <h5 class="card-title">Dịch vụ</h5>
-
-                            <table class="table table-borderless datatable">
-                                <thead>
-                                    <tr>
-                                        <th scope="col">ID</th>
-                                        <th scope="col">Tên dịch vụ</th>
-                                        <th scope="col">Số lượng</th>
-                                        <th scope="col">Loại dịch vụ</th>
-                                        <th scope="col">Giá($)</th>
-                                        <th scope="col">Tổng tiền($)</th>
-                                        <th>Chi tiết</th>
-                                    </tr>
-                                </thead>
-                                <tbody>
-                                    @foreach (var dichVu in ViewBag.DichVus)
-                                    {
-                                        <tr>
-                                            <th scope="row">@dichVu.Id</th>
-                                            <td>@dichVu.TenDV</td>
-                                            <td><input type="number" name="" id="" min="0"
-                                                    class="form-control quantity-input" style="width: 70px;" value="0"></td>
-                                            <td>@dichVu.LoaiDV</td>
-                                            <td>@dichVu.Gia</td>
-                                            <td class="total-amount">0</td>
-                                            <td>
-                                                <a href="../../../DichVus/Details/@dichVu.Id" style="color: white;">
-                                                    <button type="button" class="btn btn-secondary" onclick="">
-                                                        <i class="bi bi-book"></i>
-                                                    </button>
-                                                </a>
-                                            </td>
-                                        </tr>
-                                    }
-
-                                    <script>
-                                        // Lấy tất cả các input số lượng
-                                        var quantityInputs = document.getElementsByClassName('quantity-input');
-                                        // Lặp qua từng input số lượng
-                                        for (var i = 0; i < quantityInputs.length; i++) {
-                                            // Gán sự kiện onchange cho mỗi input số lượng
-                                            quantityInputs[i].onchange = function () {
-                                                // Lấy hàng <tr> chứa input số lượng
-                                                var row = this.closest('tr');
-                                                // Lấy giá từ cột giá
-                                                var price = parseFloat(row.querySelector('td:nth-child(5)')
-                                                    .innerText);
-                                                // Lấy số lượng từ input số lượng
-                                                var quantity = parseFloat(this.value);
-                                                // Tính tổng tiền
-                                                var totalAmount = price * quantity;
-                                                // Gán giá trị tổng tiền vào cột tổng tiền
-                                                row.querySelector('.total-amount').innerText = totalAmount;
-                                            };
-                                        }
-                                    </script>
-                                </tbody>
-                                <tfoot>
-                                    <tr>
-                                        <td colspan="5" style="text-align: right;"><strong>Tổng cộng:</strong></td>
-                                        <td id="grand-total" style="font-weight: bold;">0</td>
-                                        <td></td>
-                                    </tr>
-
-                                </tfoot>
-                            </table>
-
-                        </div>
 
                         <div class="tab-pane fade profile-overview pt-3 " id="profile-khachhang">
 
@@ -220,18 +147,68 @@
                                 <div asp-validation-summary="ModelOnly" class="text-danger"></div>
                                 <div class="col-md-6">
                                     <label asp-for="IDKH" class="Form-label">Tên khách hàng</label>
-                                    <input asp-for="IDKH" id="selectedKhachHangId" style="display:none;" />
-                                    <input id="selectedTenKhachHang" disabled class="form-control"/>
+                                    <input asp-for="IDKH" id="selectedKhachHangId" style="display: none;" />
+                                    <input id="selectedTenKhachHang" disabled class="form-control" />
                                     <span asp-validation-for="IDKH" class="text-danger"></span>
                                 </div>
                                 <div class="col-md-6">
                                     <label asp-for="MaPhong" class="Form-label">Mã phòng</label>
-                                    <input asp-for="MaPhong" id="selectedphongId" style="display:none;" />
-                                    <input id="selectedTenPhong" disabled class="form-control"/>
+                                    <input asp-for="MaPhong" id="selectedphongId" style="display: none;" />
+                                    <input id="selectedTenPhong" disabled class="form-control" />
                                     <span asp-validation-for="MaPhong" class="text-danger"></span>
                                 </div>
 
-                                <input asp-for="TrangThai" style="display:none;" value="Chưa thanh toán" />
+                                <input asp-for="TrangThai" style="display: none;" value="Chưa thanh toán" />
+
+                                <!-- Add the service selection section -->
+                                <div class="col-md-12">
+                                    <label class="Form-label">Dịch vụ</label>
+                                    <table class="table table-borderless datatable">
+                                        <thead>
+                                            <tr>
+                                                <th scope="col">ID</th>
+                                                <th scope="col">Tên dịch vụ</th>
+                                                <th scope="col">Số lượng</th>
+                                                <th scope="col">Loại dịch vụ</th>
+                                                <th scope="col">Giá($)</th>
+                                                <th scope="col">Tổng tiền($)</th>
+                                                <th>Chi tiết</th>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                            @foreach (var dichVu in ViewBag.DichVus)
+                                            {
+                                                <tr>
+                                                    <th scope="row">@dichVu.Id</th>
+                                                    <td>@dichVu.TenDV</td>
+                                                    <td>
+                                                        <input type="number" name="quantity-@dichVu.Id" min="0"
+                                                            class="form-control quantity-input" style="width: 70px;"
+                                                            value="0" />
+                                                    </td>
+                                                    <td>@dichVu.LoaiDV</td>
+                                                    <td>@dichVu.Gia</td>
+                                                    <td class="total-amount">0</td>
+                                                    <td>
+                                                        <a href="../../../DichVus/Details/@dichVu.Id" style="color: white;">
+                                                            <button type="button" class="btn btn-secondary" onclick="">
+                                                                <i class="bi bi-book"></i>
+                                                            </button>
+                                                        </a>
+                                                    </td>
+                                                </tr>
+                                            }
+                                        </tbody>
+                                        <tfoot>
+                                            <tr>
+                                                <td colspan="5" style="text-align: right;"><strong>Tổng cộng:</strong>
+                                                </td>
+                                                <td id="grand-total" style="font-weight: bold;">0</td>
+                                                <td></td>
+                                            </tr>
+                                        </tfoot>
+                                    </table>
+                                </div>
 
                                 <div class="col-md-6">
                                     <label asp-for="IDNV" class="Form-label">Nhân viên</label>
@@ -241,7 +218,6 @@
                                         {
                                             <option value="@nhanvien.Id">@nhanvien.TenNV</option>
                                         }
-
                                     </select>
                                     <span asp-validation-for="IDNV" class="text-danger"></span>
                                 </div>
@@ -263,18 +239,25 @@
                                         value="@DateTime.Now.ToString("yyyy-MM-dd")" />
                                     <span asp-validation-for="NgayTra" class="text-danger"></span>
                                 </div>
+                                <input asp-for="TongTien" class="form-control" value="0"  type="hidden"/>
+                                <input asp-for="TrangThai" class="form-control" value="Chưa thanh toán" type="hidden" />
+                                @foreach (var dichVu in ViewBag.DichVus)
+                                {
+                                    <input type="hidden" name="dichVuId-@dichVu.Id" value="@dichVu.Id" />
+                                    <input type="hidden" name="dichVuTen-@dichVu.Id" value="@dichVu.TenDV" />
+                                    <input type="hidden" name="dichVuGia-@dichVu.Id" value="@dichVu.Gia" />
+                                }
 
-                                <input asp-for="TongTien" style="display: none" value="0" />
-
-                                <button type="submit" class="btn btn-primary">Lưu</button>
+                                <div class="col-12">
+                                    <button type="submit" class="btn btn-primary">Tạo hóa đơn</button>
+                                </div>
                             </form>
-                        </div>
-                    </div><!-- End Bordered Tabs -->
+                        </div><!-- End Bordered Tabs -->
+
+                    </div>
 
                 </div>
-
             </div>
-        </div>
     </section>
     <!-- Script để xử lý sự kiện khi nhấn vào button Lưu -->
 </main>
