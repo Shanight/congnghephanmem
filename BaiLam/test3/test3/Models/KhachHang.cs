@@ -1,3 +1,4 @@
+
 namespace test3.Models
 {
     public class KhachHang
@@ -8,6 +9,7 @@ namespace test3.Models
         public string Email { get; set; }
         public string GioiTinh { get; set; }
         public string CCCD { get; set; }
+
         // Thêm các trường khác nếu cần
     }
 }

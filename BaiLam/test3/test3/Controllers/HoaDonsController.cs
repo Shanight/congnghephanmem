@@ -6,6 +6,7 @@ using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.EntityFrameworkCore;
 using test3.Models;
+using test3.ViewModels;
 
 namespace test3.Controllers
 {
@@ -45,22 +46,67 @@ namespace test3.Controllers
         // GET: HoaDons/Create
         public IActionResult Create()
         {
+            ViewBag.Phongs = _context.Phongs.ToList();
+            ViewBag.DichVus = _context.DichVus.ToList();
+            ViewBag.NhanViens = _context.NhanViens.ToList();
+            ViewBag.KhachHangs = _context.KhachHangs.ToList();
+            ViewBag.AnhPhongs = _context.AnhPhongs.ToList();
             return View();
         }
 
         // POST: HoaDons/Create
         // To protect from overposting attacks, enable the specific properties you want to bind to.
         // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
+        /*
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Create([Bind("Id,IDDVSD,MaDP,TrangThai,IDNV,IDKH,TongTien,NgayDat,NgayNhan,NgayTra")] HoaDon hoaDon)
+        public async Task<IActionResult> Create([Bind("Id,MaPhong,TrangThai,IDNV,IDKH,TongTien,NgayDat,NgayNhan,NgayTra")] HoaDonCreateViewModel hoaDonViewModel)
+{
+    if (ModelState.IsValid)
+    {
+        var hoaDon = new HoaDon
+        {
+            Hoadon.IDDVSD = hoaDonViewModel.HoaDon.IDDVSD,
+            MaDP = hoaDonViewModel.HoaDon.MaDP,
+            TrangThai = hoaDonViewModel.HoaDon.TrangThai,
+            IDNV = hoaDonViewModel.HoaDon.IDNV,
+            IDKH = hoaDonViewModel.HoaDon.IDKH,
+            TongTien = hoaDonViewModel.HoaDon.TongTien,
+            NgayDat = hoaDonViewModel.HoaDon.NgayDat,
+            NgayNhan = hoaDonViewModel.HoaDon.NgayNhan,
+            NgayTra = hoaDonViewModel.HoaDon.NgayTra
+        };
+
+        _context.Add(hoaDon);
+        await _context.SaveChangesAsync();
+        return RedirectToAction(nameof(Index));
+    }
+
+    hoaDonViewModel.KhachHangs = _context.KhachHangs.ToList();
+    hoaDonViewModel.NhanViens = _context.NhanViens.ToList();
+
+    return View(hoaDonViewModel);
+}
+*/
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+
+        public IActionResult Create(HoaDon hoaDon)
         {
             if (ModelState.IsValid)
             {
+                
                 _context.Add(hoaDon);
-                await _context.SaveChangesAsync();
-                return RedirectToAction(nameof(Index));
+                _context.SaveChanges();
+                return RedirectToAction("Index");
+
             }
+            ViewBag.Phongs = _context.Phongs.ToList();
+            ViewBag.DichVus = _context.DichVus.ToList();
+            ViewBag.NhanViens = _context.NhanViens.ToList();
+            ViewBag.KhachHangs = _context.KhachHangs.ToList();
+            ViewBag.AnhPhongs = _context.AnhPhongs.ToList();
+
             return View(hoaDon);
         }
 
@@ -85,7 +131,7 @@ namespace test3.Controllers
         // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Edit(int id, [Bind("Id,IDDVSD,MaDP,TrangThai,IDNV,IDKH,TongTien,NgayDat,NgayNhan,NgayTra")] HoaDon hoaDon)
+        public async Task<IActionResult> Edit(int id, [Bind("Id,MaPhong,TrangThai,IDNV,IDKH,TongTien,NgayDat,NgayNhan,NgayTra")] HoaDon hoaDon)
         {
             if (id != hoaDon.Id)
             {

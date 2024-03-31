@@ -7984,6 +7984,22 @@
       <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
       <OriginalItemSpec>$([System.IO.Path]::GetFullPath($(MSBuildThisFileDirectory)..\staticwebassets\imgupload\anhdaidien\Nguyễn Văn A_0_20240330131213.png))</OriginalItemSpec>
     </StaticWebAsset>
+    <StaticWebAsset Include="$([System.IO.Path]::GetFullPath($(MSBuildThisFileDirectory)..\staticwebassets\imgupload\anhdaidien\Nguyễn Văn A_0_20240331131257.png))">
+      <SourceType>Package</SourceType>
+      <SourceId>test3</SourceId>
+      <ContentRoot>$(MSBuildThisFileDirectory)..\staticwebassets\</ContentRoot>
+      <BasePath>_content/test3</BasePath>
+      <RelativePath>imgupload/anhdaidien/Nguyễn Văn A_0_20240331131257.png</RelativePath>
+      <AssetKind>All</AssetKind>
+      <AssetMode>All</AssetMode>
+      <AssetRole>Primary</AssetRole>
+      <RelatedAsset></RelatedAsset>
+      <AssetTraitName></AssetTraitName>
+      <AssetTraitValue></AssetTraitValue>
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
+      <OriginalItemSpec>$([System.IO.Path]::GetFullPath($(MSBuildThisFileDirectory)..\staticwebassets\imgupload\anhdaidien\Nguyễn Văn A_0_20240331131257.png))</OriginalItemSpec>
+    </StaticWebAsset>
     <StaticWebAsset Include="$([System.IO.Path]::GetFullPath($(MSBuildThisFileDirectory)..\staticwebassets\imgupload\anhdaidien\Nguyễn Văn A_6_20240330213021.png))">
       <SourceType>Package</SourceType>
       <SourceId>test3</SourceId>
@@ -8128,6 +8144,246 @@
       <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
       <OriginalItemSpec>$([System.IO.Path]::GetFullPath($(MSBuildThisFileDirectory)..\staticwebassets\imgupload\anhdichvu\AnhDichVu_ID2_ff89fb00-bb22-4af2-b238-83937e86ad09.jpg))</OriginalItemSpec>
     </StaticWebAsset>
+    <StaticWebAsset Include="$([System.IO.Path]::GetFullPath($(MSBuildThisFileDirectory)..\staticwebassets\imgupload\anhdichvu\AnhDV_1_02de2b83-67f4-4671-83a7-a8f47c81ad05.png))">
+      <SourceType>Package</SourceType>
+      <SourceId>test3</SourceId>
+      <ContentRoot>$(MSBuildThisFileDirectory)..\staticwebassets\</ContentRoot>
+      <BasePath>_content/test3</BasePath>
+      <RelativePath>imgupload/anhdichvu/AnhDV_1_02de2b83-67f4-4671-83a7-a8f47c81ad05.png</RelativePath>
+      <AssetKind>All</AssetKind>
+      <AssetMode>All</AssetMode>
+      <AssetRole>Primary</AssetRole>
+      <RelatedAsset></RelatedAsset>
+      <AssetTraitName></AssetTraitName>
+      <AssetTraitValue></AssetTraitValue>
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
+      <OriginalItemSpec>$([System.IO.Path]::GetFullPath($(MSBuildThisFileDirectory)..\staticwebassets\imgupload\anhdichvu\AnhDV_1_02de2b83-67f4-4671-83a7-a8f47c81ad05.png))</OriginalItemSpec>
+    </StaticWebAsset>
+    <StaticWebAsset Include="$([System.IO.Path]::GetFullPath($(MSBuildThisFileDirectory)..\staticwebassets\imgupload\anhdichvu\AnhDV_1_69677195-f9d1-43fe-ba06-a365b000ff71.png))">
+      <SourceType>Package</SourceType>
+      <SourceId>test3</SourceId>
+      <ContentRoot>$(MSBuildThisFileDirectory)..\staticwebassets\</ContentRoot>
+      <BasePath>_content/test3</BasePath>
+      <RelativePath>imgupload/anhdichvu/AnhDV_1_69677195-f9d1-43fe-ba06-a365b000ff71.png</RelativePath>
+      <AssetKind>All</AssetKind>
+      <AssetMode>All</AssetMode>
+      <AssetRole>Primary</AssetRole>
+      <RelatedAsset></RelatedAsset>
+      <AssetTraitName></AssetTraitName>
+      <AssetTraitValue></AssetTraitValue>
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
+      <OriginalItemSpec>$([System.IO.Path]::GetFullPath($(MSBuildThisFileDirectory)..\staticwebassets\imgupload\anhdichvu\AnhDV_1_69677195-f9d1-43fe-ba06-a365b000ff71.png))</OriginalItemSpec>
+    </StaticWebAsset>
+    <StaticWebAsset Include="$([System.IO.Path]::GetFullPath($(MSBuildThisFileDirectory)..\staticwebassets\imgupload\anhphong\AnhPhong1_417151af-bde7-41ab-8a91-c39655547563.png))">
+      <SourceType>Package</SourceType>
+      <SourceId>test3</SourceId>
+      <ContentRoot>$(MSBuildThisFileDirectory)..\staticwebassets\</ContentRoot>
+      <BasePath>_content/test3</BasePath>
+      <RelativePath>imgupload/anhphong/AnhPhong1_417151af-bde7-41ab-8a91-c39655547563.png</RelativePath>
+      <AssetKind>All</AssetKind>
+      <AssetMode>All</AssetMode>
+      <AssetRole>Primary</AssetRole>
+      <RelatedAsset></RelatedAsset>
+      <AssetTraitName></AssetTraitName>
+      <AssetTraitValue></AssetTraitValue>
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
+      <OriginalItemSpec>$([System.IO.Path]::GetFullPath($(MSBuildThisFileDirectory)..\staticwebassets\imgupload\anhphong\AnhPhong1_417151af-bde7-41ab-8a91-c39655547563.png))</OriginalItemSpec>
+    </StaticWebAsset>
+    <StaticWebAsset Include="$([System.IO.Path]::GetFullPath($(MSBuildThisFileDirectory)..\staticwebassets\imgupload\anhphong\AnhPhong1_579734cd-06ff-4d7d-9f2b-1683a488bdf1.png))">
+      <SourceType>Package</SourceType>
+      <SourceId>test3</SourceId>
+      <ContentRoot>$(MSBuildThisFileDirectory)..\staticwebassets\</ContentRoot>
+      <BasePath>_content/test3</BasePath>
+      <RelativePath>imgupload/anhphong/AnhPhong1_579734cd-06ff-4d7d-9f2b-1683a488bdf1.png</RelativePath>
+      <AssetKind>All</AssetKind>
+      <AssetMode>All</AssetMode>
+      <AssetRole>Primary</AssetRole>
+      <RelatedAsset></RelatedAsset>
+      <AssetTraitName></AssetTraitName>
+      <AssetTraitValue></AssetTraitValue>
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
+      <OriginalItemSpec>$([System.IO.Path]::GetFullPath($(MSBuildThisFileDirectory)..\staticwebassets\imgupload\anhphong\AnhPhong1_579734cd-06ff-4d7d-9f2b-1683a488bdf1.png))</OriginalItemSpec>
+    </StaticWebAsset>
+    <StaticWebAsset Include="$([System.IO.Path]::GetFullPath($(MSBuildThisFileDirectory)..\staticwebassets\imgupload\anhphong\AnhPhong1_744c6ff8-831a-44c8-aeaf-c713527d316b.png))">
+      <SourceType>Package</SourceType>
+      <SourceId>test3</SourceId>
+      <ContentRoot>$(MSBuildThisFileDirectory)..\staticwebassets\</ContentRoot>
+      <BasePath>_content/test3</BasePath>
+      <RelativePath>imgupload/anhphong/AnhPhong1_744c6ff8-831a-44c8-aeaf-c713527d316b.png</RelativePath>
+      <AssetKind>All</AssetKind>
+      <AssetMode>All</AssetMode>
+      <AssetRole>Primary</AssetRole>
+      <RelatedAsset></RelatedAsset>
+      <AssetTraitName></AssetTraitName>
+      <AssetTraitValue></AssetTraitValue>
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
+      <OriginalItemSpec>$([System.IO.Path]::GetFullPath($(MSBuildThisFileDirectory)..\staticwebassets\imgupload\anhphong\AnhPhong1_744c6ff8-831a-44c8-aeaf-c713527d316b.png))</OriginalItemSpec>
+    </StaticWebAsset>
+    <StaticWebAsset Include="$([System.IO.Path]::GetFullPath($(MSBuildThisFileDirectory)..\staticwebassets\imgupload\anhphong\AnhPhong1_77036ca5-7681-430d-8082-f7f37560cced.png))">
+      <SourceType>Package</SourceType>
+      <SourceId>test3</SourceId>
+      <ContentRoot>$(MSBuildThisFileDirectory)..\staticwebassets\</ContentRoot>
+      <BasePath>_content/test3</BasePath>
+      <RelativePath>imgupload/anhphong/AnhPhong1_77036ca5-7681-430d-8082-f7f37560cced.png</RelativePath>
+      <AssetKind>All</AssetKind>
+      <AssetMode>All</AssetMode>
+      <AssetRole>Primary</AssetRole>
+      <RelatedAsset></RelatedAsset>
+      <AssetTraitName></AssetTraitName>
+      <AssetTraitValue></AssetTraitValue>
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
+      <OriginalItemSpec>$([System.IO.Path]::GetFullPath($(MSBuildThisFileDirectory)..\staticwebassets\imgupload\anhphong\AnhPhong1_77036ca5-7681-430d-8082-f7f37560cced.png))</OriginalItemSpec>
+    </StaticWebAsset>
+    <StaticWebAsset Include="$([System.IO.Path]::GetFullPath($(MSBuildThisFileDirectory)..\staticwebassets\imgupload\anhphong\AnhPhong1_ac2e6e44-844a-451d-98f2-8909ab883477.png))">
+      <SourceType>Package</SourceType>
+      <SourceId>test3</SourceId>
+      <ContentRoot>$(MSBuildThisFileDirectory)..\staticwebassets\</ContentRoot>
+      <BasePath>_content/test3</BasePath>
+      <RelativePath>imgupload/anhphong/AnhPhong1_ac2e6e44-844a-451d-98f2-8909ab883477.png</RelativePath>
+      <AssetKind>All</AssetKind>
+      <AssetMode>All</AssetMode>
+      <AssetRole>Primary</AssetRole>
+      <RelatedAsset></RelatedAsset>
+      <AssetTraitName></AssetTraitName>
+      <AssetTraitValue></AssetTraitValue>
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
+      <OriginalItemSpec>$([System.IO.Path]::GetFullPath($(MSBuildThisFileDirectory)..\staticwebassets\imgupload\anhphong\AnhPhong1_ac2e6e44-844a-451d-98f2-8909ab883477.png))</OriginalItemSpec>
+    </StaticWebAsset>
+    <StaticWebAsset Include="$([System.IO.Path]::GetFullPath($(MSBuildThisFileDirectory)..\staticwebassets\imgupload\anhphong\AnhPhong1_ca4eefa5-4ef3-443b-b3e3-228ec9b3d655.png))">
+      <SourceType>Package</SourceType>
+      <SourceId>test3</SourceId>
+      <ContentRoot>$(MSBuildThisFileDirectory)..\staticwebassets\</ContentRoot>
+      <BasePath>_content/test3</BasePath>
+      <RelativePath>imgupload/anhphong/AnhPhong1_ca4eefa5-4ef3-443b-b3e3-228ec9b3d655.png</RelativePath>
+      <AssetKind>All</AssetKind>
+      <AssetMode>All</AssetMode>
+      <AssetRole>Primary</AssetRole>
+      <RelatedAsset></RelatedAsset>
+      <AssetTraitName></AssetTraitName>
+      <AssetTraitValue></AssetTraitValue>
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
+      <OriginalItemSpec>$([System.IO.Path]::GetFullPath($(MSBuildThisFileDirectory)..\staticwebassets\imgupload\anhphong\AnhPhong1_ca4eefa5-4ef3-443b-b3e3-228ec9b3d655.png))</OriginalItemSpec>
+    </StaticWebAsset>
+    <StaticWebAsset Include="$([System.IO.Path]::GetFullPath($(MSBuildThisFileDirectory)..\staticwebassets\imgupload\anhphong\AnhPhong1_cc456c14-6db2-4b44-b71d-2a5817c32784.png))">
+      <SourceType>Package</SourceType>
+      <SourceId>test3</SourceId>
+      <ContentRoot>$(MSBuildThisFileDirectory)..\staticwebassets\</ContentRoot>
+      <BasePath>_content/test3</BasePath>
+      <RelativePath>imgupload/anhphong/AnhPhong1_cc456c14-6db2-4b44-b71d-2a5817c32784.png</RelativePath>
+      <AssetKind>All</AssetKind>
+      <AssetMode>All</AssetMode>
+      <AssetRole>Primary</AssetRole>
+      <RelatedAsset></RelatedAsset>
+      <AssetTraitName></AssetTraitName>
+      <AssetTraitValue></AssetTraitValue>
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
+      <OriginalItemSpec>$([System.IO.Path]::GetFullPath($(MSBuildThisFileDirectory)..\staticwebassets\imgupload\anhphong\AnhPhong1_cc456c14-6db2-4b44-b71d-2a5817c32784.png))</OriginalItemSpec>
+    </StaticWebAsset>
+    <StaticWebAsset Include="$([System.IO.Path]::GetFullPath($(MSBuildThisFileDirectory)..\staticwebassets\imgupload\anhphong\AnhPhong1_e91054dd-a83b-4f65-bc98-e70c60e9aec0.png))">
+      <SourceType>Package</SourceType>
+      <SourceId>test3</SourceId>
+      <ContentRoot>$(MSBuildThisFileDirectory)..\staticwebassets\</ContentRoot>
+      <BasePath>_content/test3</BasePath>
+      <RelativePath>imgupload/anhphong/AnhPhong1_e91054dd-a83b-4f65-bc98-e70c60e9aec0.png</RelativePath>
+      <AssetKind>All</AssetKind>
+      <AssetMode>All</AssetMode>
+      <AssetRole>Primary</AssetRole>
+      <RelatedAsset></RelatedAsset>
+      <AssetTraitName></AssetTraitName>
+      <AssetTraitValue></AssetTraitValue>
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
+      <OriginalItemSpec>$([System.IO.Path]::GetFullPath($(MSBuildThisFileDirectory)..\staticwebassets\imgupload\anhphong\AnhPhong1_e91054dd-a83b-4f65-bc98-e70c60e9aec0.png))</OriginalItemSpec>
+    </StaticWebAsset>
+    <StaticWebAsset Include="$([System.IO.Path]::GetFullPath($(MSBuildThisFileDirectory)..\staticwebassets\imgupload\anhphong\AnhPhong2_4edd1055-fd48-4713-991d-78af37c83091.png))">
+      <SourceType>Package</SourceType>
+      <SourceId>test3</SourceId>
+      <ContentRoot>$(MSBuildThisFileDirectory)..\staticwebassets\</ContentRoot>
+      <BasePath>_content/test3</BasePath>
+      <RelativePath>imgupload/anhphong/AnhPhong2_4edd1055-fd48-4713-991d-78af37c83091.png</RelativePath>
+      <AssetKind>All</AssetKind>
+      <AssetMode>All</AssetMode>
+      <AssetRole>Primary</AssetRole>
+      <RelatedAsset></RelatedAsset>
+      <AssetTraitName></AssetTraitName>
+      <AssetTraitValue></AssetTraitValue>
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
+      <OriginalItemSpec>$([System.IO.Path]::GetFullPath($(MSBuildThisFileDirectory)..\staticwebassets\imgupload\anhphong\AnhPhong2_4edd1055-fd48-4713-991d-78af37c83091.png))</OriginalItemSpec>
+    </StaticWebAsset>
+    <StaticWebAsset Include="$([System.IO.Path]::GetFullPath($(MSBuildThisFileDirectory)..\staticwebassets\imgupload\anhphong\AnhPhong2_50e74ac2-c271-4755-8d4a-b0c671d2f885.png))">
+      <SourceType>Package</SourceType>
+      <SourceId>test3</SourceId>
+      <ContentRoot>$(MSBuildThisFileDirectory)..\staticwebassets\</ContentRoot>
+      <BasePath>_content/test3</BasePath>
+      <RelativePath>imgupload/anhphong/AnhPhong2_50e74ac2-c271-4755-8d4a-b0c671d2f885.png</RelativePath>
+      <AssetKind>All</AssetKind>
+      <AssetMode>All</AssetMode>
+      <AssetRole>Primary</AssetRole>
+      <RelatedAsset></RelatedAsset>
+      <AssetTraitName></AssetTraitName>
+      <AssetTraitValue></AssetTraitValue>
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
+      <OriginalItemSpec>$([System.IO.Path]::GetFullPath($(MSBuildThisFileDirectory)..\staticwebassets\imgupload\anhphong\AnhPhong2_50e74ac2-c271-4755-8d4a-b0c671d2f885.png))</OriginalItemSpec>
+    </StaticWebAsset>
+    <StaticWebAsset Include="$([System.IO.Path]::GetFullPath($(MSBuildThisFileDirectory)..\staticwebassets\imgupload\anhphong\AnhPhong2_8ed2abc1-e421-47de-96e3-1048de307c49.png))">
+      <SourceType>Package</SourceType>
+      <SourceId>test3</SourceId>
+      <ContentRoot>$(MSBuildThisFileDirectory)..\staticwebassets\</ContentRoot>
+      <BasePath>_content/test3</BasePath>
+      <RelativePath>imgupload/anhphong/AnhPhong2_8ed2abc1-e421-47de-96e3-1048de307c49.png</RelativePath>
+      <AssetKind>All</AssetKind>
+      <AssetMode>All</AssetMode>
+      <AssetRole>Primary</AssetRole>
+      <RelatedAsset></RelatedAsset>
+      <AssetTraitName></AssetTraitName>
+      <AssetTraitValue></AssetTraitValue>
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
+      <OriginalItemSpec>$([System.IO.Path]::GetFullPath($(MSBuildThisFileDirectory)..\staticwebassets\imgupload\anhphong\AnhPhong2_8ed2abc1-e421-47de-96e3-1048de307c49.png))</OriginalItemSpec>
+    </StaticWebAsset>
+    <StaticWebAsset Include="$([System.IO.Path]::GetFullPath($(MSBuildThisFileDirectory)..\staticwebassets\imgupload\anhphong\AnhPhong2_a4a02ec6-98bf-4c98-bc15-1e976ba233ea.png))">
+      <SourceType>Package</SourceType>
+      <SourceId>test3</SourceId>
+      <ContentRoot>$(MSBuildThisFileDirectory)..\staticwebassets\</ContentRoot>
+      <BasePath>_content/test3</BasePath>
+      <RelativePath>imgupload/anhphong/AnhPhong2_a4a02ec6-98bf-4c98-bc15-1e976ba233ea.png</RelativePath>
+      <AssetKind>All</AssetKind>
+      <AssetMode>All</AssetMode>
+      <AssetRole>Primary</AssetRole>
+      <RelatedAsset></RelatedAsset>
+      <AssetTraitName></AssetTraitName>
+      <AssetTraitValue></AssetTraitValue>
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
+      <OriginalItemSpec>$([System.IO.Path]::GetFullPath($(MSBuildThisFileDirectory)..\staticwebassets\imgupload\anhphong\AnhPhong2_a4a02ec6-98bf-4c98-bc15-1e976ba233ea.png))</OriginalItemSpec>
+    </StaticWebAsset>
+    <StaticWebAsset Include="$([System.IO.Path]::GetFullPath($(MSBuildThisFileDirectory)..\staticwebassets\imgupload\anhphong\AnhPhong2_fbbb66fa-4f8d-4099-a308-e545c5df67bc.png))">
+      <SourceType>Package</SourceType>
+      <SourceId>test3</SourceId>
+      <ContentRoot>$(MSBuildThisFileDirectory)..\staticwebassets\</ContentRoot>
+      <BasePath>_content/test3</BasePath>
+      <RelativePath>imgupload/anhphong/AnhPhong2_fbbb66fa-4f8d-4099-a308-e545c5df67bc.png</RelativePath>
+      <AssetKind>All</AssetKind>
+      <AssetMode>All</AssetMode>
+      <AssetRole>Primary</AssetRole>
+      <RelatedAsset></RelatedAsset>
+      <AssetTraitName></AssetTraitName>
+      <AssetTraitValue></AssetTraitValue>
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
+      <OriginalItemSpec>$([System.IO.Path]::GetFullPath($(MSBuildThisFileDirectory)..\staticwebassets\imgupload\anhphong\AnhPhong2_fbbb66fa-4f8d-4099-a308-e545c5df67bc.png))</OriginalItemSpec>
+    </StaticWebAsset>
     <StaticWebAsset Include="$([System.IO.Path]::GetFullPath($(MSBuildThisFileDirectory)..\staticwebassets\imgupload\anhphong\AnhPhong52_094d16cc-a2bf-477a-a11a-cb889b362506.jpg))">
       <SourceType>Package</SourceType>
       <SourceId>test3</SourceId>
@@ -8223,6 +8479,150 @@
       <CopyToOutputDirectory>Never</CopyToOutputDirectory>
       <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
       <OriginalItemSpec>$([System.IO.Path]::GetFullPath($(MSBuildThisFileDirectory)..\staticwebassets\imgupload\anhphong\AnhPhong55_154ae09b-d54b-4a54-adab-5de7eb56a8c8.png))</OriginalItemSpec>
+    </StaticWebAsset>
+    <StaticWebAsset Include="$([System.IO.Path]::GetFullPath($(MSBuildThisFileDirectory)..\staticwebassets\imgupload\anhphong\AnhPhong56_3d8fdc48-c510-47b2-96bf-29dad5812b66.png))">
+      <SourceType>Package</SourceType>
+      <SourceId>test3</SourceId>
+      <ContentRoot>$(MSBuildThisFileDirectory)..\staticwebassets\</ContentRoot>
+      <BasePath>_content/test3</BasePath>
+      <RelativePath>imgupload/anhphong/AnhPhong56_3d8fdc48-c510-47b2-96bf-29dad5812b66.png</RelativePath>
+      <AssetKind>All</AssetKind>
+      <AssetMode>All</AssetMode>
+      <AssetRole>Primary</AssetRole>
+      <RelatedAsset></RelatedAsset>
+      <AssetTraitName></AssetTraitName>
+      <AssetTraitValue></AssetTraitValue>
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
+      <OriginalItemSpec>$([System.IO.Path]::GetFullPath($(MSBuildThisFileDirectory)..\staticwebassets\imgupload\anhphong\AnhPhong56_3d8fdc48-c510-47b2-96bf-29dad5812b66.png))</OriginalItemSpec>
+    </StaticWebAsset>
+    <StaticWebAsset Include="$([System.IO.Path]::GetFullPath($(MSBuildThisFileDirectory)..\staticwebassets\imgupload\anhphong\AnhPhong56_444bd1bc-69a4-47d9-8d0c-7030ebb24cf5.png))">
+      <SourceType>Package</SourceType>
+      <SourceId>test3</SourceId>
+      <ContentRoot>$(MSBuildThisFileDirectory)..\staticwebassets\</ContentRoot>
+      <BasePath>_content/test3</BasePath>
+      <RelativePath>imgupload/anhphong/AnhPhong56_444bd1bc-69a4-47d9-8d0c-7030ebb24cf5.png</RelativePath>
+      <AssetKind>All</AssetKind>
+      <AssetMode>All</AssetMode>
+      <AssetRole>Primary</AssetRole>
+      <RelatedAsset></RelatedAsset>
+      <AssetTraitName></AssetTraitName>
+      <AssetTraitValue></AssetTraitValue>
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
+      <OriginalItemSpec>$([System.IO.Path]::GetFullPath($(MSBuildThisFileDirectory)..\staticwebassets\imgupload\anhphong\AnhPhong56_444bd1bc-69a4-47d9-8d0c-7030ebb24cf5.png))</OriginalItemSpec>
+    </StaticWebAsset>
+    <StaticWebAsset Include="$([System.IO.Path]::GetFullPath($(MSBuildThisFileDirectory)..\staticwebassets\imgupload\anhphong\AnhPhong56_4756f4bf-008d-49c7-9eb4-e2907002b975.png))">
+      <SourceType>Package</SourceType>
+      <SourceId>test3</SourceId>
+      <ContentRoot>$(MSBuildThisFileDirectory)..\staticwebassets\</ContentRoot>
+      <BasePath>_content/test3</BasePath>
+      <RelativePath>imgupload/anhphong/AnhPhong56_4756f4bf-008d-49c7-9eb4-e2907002b975.png</RelativePath>
+      <AssetKind>All</AssetKind>
+      <AssetMode>All</AssetMode>
+      <AssetRole>Primary</AssetRole>
+      <RelatedAsset></RelatedAsset>
+      <AssetTraitName></AssetTraitName>
+      <AssetTraitValue></AssetTraitValue>
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
+      <OriginalItemSpec>$([System.IO.Path]::GetFullPath($(MSBuildThisFileDirectory)..\staticwebassets\imgupload\anhphong\AnhPhong56_4756f4bf-008d-49c7-9eb4-e2907002b975.png))</OriginalItemSpec>
+    </StaticWebAsset>
+    <StaticWebAsset Include="$([System.IO.Path]::GetFullPath($(MSBuildThisFileDirectory)..\staticwebassets\imgupload\anhphong\AnhPhong56_d77d392b-2ee3-493a-8dad-abe128833ad1.png))">
+      <SourceType>Package</SourceType>
+      <SourceId>test3</SourceId>
+      <ContentRoot>$(MSBuildThisFileDirectory)..\staticwebassets\</ContentRoot>
+      <BasePath>_content/test3</BasePath>
+      <RelativePath>imgupload/anhphong/AnhPhong56_d77d392b-2ee3-493a-8dad-abe128833ad1.png</RelativePath>
+      <AssetKind>All</AssetKind>
+      <AssetMode>All</AssetMode>
+      <AssetRole>Primary</AssetRole>
+      <RelatedAsset></RelatedAsset>
+      <AssetTraitName></AssetTraitName>
+      <AssetTraitValue></AssetTraitValue>
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
+      <OriginalItemSpec>$([System.IO.Path]::GetFullPath($(MSBuildThisFileDirectory)..\staticwebassets\imgupload\anhphong\AnhPhong56_d77d392b-2ee3-493a-8dad-abe128833ad1.png))</OriginalItemSpec>
+    </StaticWebAsset>
+    <StaticWebAsset Include="$([System.IO.Path]::GetFullPath($(MSBuildThisFileDirectory)..\staticwebassets\imgupload\anhphong\AnhPhong56_edb7ac2c-1554-49a6-84e3-f5bbc9ac2778.png))">
+      <SourceType>Package</SourceType>
+      <SourceId>test3</SourceId>
+      <ContentRoot>$(MSBuildThisFileDirectory)..\staticwebassets\</ContentRoot>
+      <BasePath>_content/test3</BasePath>
+      <RelativePath>imgupload/anhphong/AnhPhong56_edb7ac2c-1554-49a6-84e3-f5bbc9ac2778.png</RelativePath>
+      <AssetKind>All</AssetKind>
+      <AssetMode>All</AssetMode>
+      <AssetRole>Primary</AssetRole>
+      <RelatedAsset></RelatedAsset>
+      <AssetTraitName></AssetTraitName>
+      <AssetTraitValue></AssetTraitValue>
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
+      <OriginalItemSpec>$([System.IO.Path]::GetFullPath($(MSBuildThisFileDirectory)..\staticwebassets\imgupload\anhphong\AnhPhong56_edb7ac2c-1554-49a6-84e3-f5bbc9ac2778.png))</OriginalItemSpec>
+    </StaticWebAsset>
+    <StaticWebAsset Include="$([System.IO.Path]::GetFullPath($(MSBuildThisFileDirectory)..\staticwebassets\imgupload\anhphong\AnhPhong57_176bfb90-3616-420c-8e27-0e233338ed50.png))">
+      <SourceType>Package</SourceType>
+      <SourceId>test3</SourceId>
+      <ContentRoot>$(MSBuildThisFileDirectory)..\staticwebassets\</ContentRoot>
+      <BasePath>_content/test3</BasePath>
+      <RelativePath>imgupload/anhphong/AnhPhong57_176bfb90-3616-420c-8e27-0e233338ed50.png</RelativePath>
+      <AssetKind>All</AssetKind>
+      <AssetMode>All</AssetMode>
+      <AssetRole>Primary</AssetRole>
+      <RelatedAsset></RelatedAsset>
+      <AssetTraitName></AssetTraitName>
+      <AssetTraitValue></AssetTraitValue>
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
+      <OriginalItemSpec>$([System.IO.Path]::GetFullPath($(MSBuildThisFileDirectory)..\staticwebassets\imgupload\anhphong\AnhPhong57_176bfb90-3616-420c-8e27-0e233338ed50.png))</OriginalItemSpec>
+    </StaticWebAsset>
+    <StaticWebAsset Include="$([System.IO.Path]::GetFullPath($(MSBuildThisFileDirectory)..\staticwebassets\imgupload\anhphong\AnhPhong57_346cdf7c-c1cd-46e1-99c3-e0587af679a2.png))">
+      <SourceType>Package</SourceType>
+      <SourceId>test3</SourceId>
+      <ContentRoot>$(MSBuildThisFileDirectory)..\staticwebassets\</ContentRoot>
+      <BasePath>_content/test3</BasePath>
+      <RelativePath>imgupload/anhphong/AnhPhong57_346cdf7c-c1cd-46e1-99c3-e0587af679a2.png</RelativePath>
+      <AssetKind>All</AssetKind>
+      <AssetMode>All</AssetMode>
+      <AssetRole>Primary</AssetRole>
+      <RelatedAsset></RelatedAsset>
+      <AssetTraitName></AssetTraitName>
+      <AssetTraitValue></AssetTraitValue>
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
+      <OriginalItemSpec>$([System.IO.Path]::GetFullPath($(MSBuildThisFileDirectory)..\staticwebassets\imgupload\anhphong\AnhPhong57_346cdf7c-c1cd-46e1-99c3-e0587af679a2.png))</OriginalItemSpec>
+    </StaticWebAsset>
+    <StaticWebAsset Include="$([System.IO.Path]::GetFullPath($(MSBuildThisFileDirectory)..\staticwebassets\imgupload\anhphong\AnhPhong57_4d895a95-b0d8-4a05-ad13-6aae1596b824.png))">
+      <SourceType>Package</SourceType>
+      <SourceId>test3</SourceId>
+      <ContentRoot>$(MSBuildThisFileDirectory)..\staticwebassets\</ContentRoot>
+      <BasePath>_content/test3</BasePath>
+      <RelativePath>imgupload/anhphong/AnhPhong57_4d895a95-b0d8-4a05-ad13-6aae1596b824.png</RelativePath>
+      <AssetKind>All</AssetKind>
+      <AssetMode>All</AssetMode>
+      <AssetRole>Primary</AssetRole>
+      <RelatedAsset></RelatedAsset>
+      <AssetTraitName></AssetTraitName>
+      <AssetTraitValue></AssetTraitValue>
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
+      <OriginalItemSpec>$([System.IO.Path]::GetFullPath($(MSBuildThisFileDirectory)..\staticwebassets\imgupload\anhphong\AnhPhong57_4d895a95-b0d8-4a05-ad13-6aae1596b824.png))</OriginalItemSpec>
+    </StaticWebAsset>
+    <StaticWebAsset Include="$([System.IO.Path]::GetFullPath($(MSBuildThisFileDirectory)..\staticwebassets\imgupload\anhphong\AnhPhong57_5796b327-5713-4263-a5b0-800991d83174.png))">
+      <SourceType>Package</SourceType>
+      <SourceId>test3</SourceId>
+      <ContentRoot>$(MSBuildThisFileDirectory)..\staticwebassets\</ContentRoot>
+      <BasePath>_content/test3</BasePath>
+      <RelativePath>imgupload/anhphong/AnhPhong57_5796b327-5713-4263-a5b0-800991d83174.png</RelativePath>
+      <AssetKind>All</AssetKind>
+      <AssetMode>All</AssetMode>
+      <AssetRole>Primary</AssetRole>
+      <RelatedAsset></RelatedAsset>
+      <AssetTraitName></AssetTraitName>
+      <AssetTraitValue></AssetTraitValue>
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
+      <OriginalItemSpec>$([System.IO.Path]::GetFullPath($(MSBuildThisFileDirectory)..\staticwebassets\imgupload\anhphong\AnhPhong57_5796b327-5713-4263-a5b0-800991d83174.png))</OriginalItemSpec>
     </StaticWebAsset>
     <StaticWebAsset Include="$([System.IO.Path]::GetFullPath($(MSBuildThisFileDirectory)..\staticwebassets\js\site.js))">
       <SourceType>Package</SourceType>

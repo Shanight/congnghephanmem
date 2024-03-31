@@ -19,7 +19,6 @@ namespace test3.Models
         public DbSet<KhachHang> KhachHangs { get; set; }
         public DbSet<NhanVien> NhanViens { get; set; }
         public DbSet<Phong> Phongs { get; set; }
-        public object DatPhongs { get; internal set; }
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {

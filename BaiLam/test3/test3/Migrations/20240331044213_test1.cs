@@ -28,6 +28,34 @@ namespace test3.Migrations
                 });
 
             migrationBuilder.CreateTable(
+                name: "AnhDichVus",
+                columns: table => new
+                {
+                    Id = table.Column<int>(type: "int", nullable: false)
+                        .Annotation("SqlServer:Identity", "1, 1"),
+                    TenAnh = table.Column<string>(type: "nvarchar(max)", nullable: false),
+                    NhomAnh = table.Column<string>(type: "nvarchar(max)", nullable: false)
+                },
+                constraints: table =>
+                {
+                    table.PrimaryKey("PK_AnhDichVus", x => x.Id);
+                });
+
+            migrationBuilder.CreateTable(
+                name: "AnhPhongs",
+                columns: table => new
+                {
+                    Id = table.Column<int>(type: "int", nullable: false)
+                        .Annotation("SqlServer:Identity", "1, 1"),
+                    TenAnh = table.Column<string>(type: "nvarchar(max)", nullable: false),
+                    NhomAnh = table.Column<string>(type: "nvarchar(max)", nullable: false)
+                },
+                constraints: table =>
+                {
+                    table.PrimaryKey("PK_AnhPhongs", x => x.Id);
+                });
+
+            migrationBuilder.CreateTable(
                 name: "AspNetRoles",
                 columns: table => new
                 {
@@ -64,6 +92,115 @@ namespace test3.Migrations
                 constraints: table =>
                 {
                     table.PrimaryKey("PK_AspNetUsers", x => x.Id);
+                });
+
+            migrationBuilder.CreateTable(
+                name: "DichVus",
+                columns: table => new
+                {
+                    Id = table.Column<int>(type: "int", nullable: false)
+                        .Annotation("SqlServer:Identity", "1, 1"),
+                    TenDV = table.Column<string>(type: "nvarchar(max)", nullable: false),
+                    MoTa = table.Column<string>(type: "nvarchar(max)", nullable: false),
+                    Gia = table.Column<string>(type: "nvarchar(max)", nullable: false),
+                    LoaiDV = table.Column<string>(type: "nvarchar(max)", nullable: false),
+                    SoLuong = table.Column<string>(type: "nvarchar(max)", nullable: false)
+                },
+                constraints: table =>
+                {
+                    table.PrimaryKey("PK_DichVus", x => x.Id);
+                });
+
+            migrationBuilder.CreateTable(
+                name: "DichVuSuDungs",
+                columns: table => new
+                {
+                    Id = table.Column<int>(type: "int", nullable: false)
+                        .Annotation("SqlServer:Identity", "1, 1"),
+                    MaDP = table.Column<string>(type: "nvarchar(max)", nullable: false),
+                    IDDV = table.Column<string>(type: "nvarchar(max)", nullable: false),
+                    SoLuong = table.Column<string>(type: "nvarchar(max)", nullable: false)
+                },
+                constraints: table =>
+                {
+                    table.PrimaryKey("PK_DichVuSuDungs", x => x.Id);
+                });
+
+            migrationBuilder.CreateTable(
+                name: "HoaDons",
+                columns: table => new
+                {
+                    Id = table.Column<int>(type: "int", nullable: false)
+                        .Annotation("SqlServer:Identity", "1, 1"),
+                    MaPhong = table.Column<string>(type: "nvarchar(max)", nullable: false),
+                    TrangThai = table.Column<string>(type: "nvarchar(max)", nullable: false),
+                    IDNV = table.Column<string>(type: "nvarchar(max)", nullable: false),
+                    IDKH = table.Column<string>(type: "nvarchar(max)", nullable: false),
+                    NgayDat = table.Column<string>(type: "nvarchar(max)", nullable: false),
+                    NgayNhan = table.Column<string>(type: "nvarchar(max)", nullable: false),
+                    NgayTra = table.Column<string>(type: "nvarchar(max)", nullable: false),
+                    TongTien = table.Column<string>(type: "nvarchar(max)", nullable: false)
+                },
+                constraints: table =>
+                {
+                    table.PrimaryKey("PK_HoaDons", x => x.Id);
+                });
+
+            migrationBuilder.CreateTable(
+                name: "KhachHangs",
+                columns: table => new
+                {
+                    Id = table.Column<int>(type: "int", nullable: false)
+                        .Annotation("SqlServer:Identity", "1, 1"),
+                    TenKH = table.Column<string>(type: "nvarchar(max)", nullable: false),
+                    SDT = table.Column<string>(type: "nvarchar(max)", nullable: false),
+                    Email = table.Column<string>(type: "nvarchar(max)", nullable: false),
+                    GioiTinh = table.Column<string>(type: "nvarchar(max)", nullable: false),
+                    CCCD = table.Column<string>(type: "nvarchar(max)", nullable: false)
+                },
+                constraints: table =>
+                {
+                    table.PrimaryKey("PK_KhachHangs", x => x.Id);
+                });
+
+            migrationBuilder.CreateTable(
+                name: "NhanViens",
+                columns: table => new
+                {
+                    Id = table.Column<int>(type: "int", nullable: false)
+                        .Annotation("SqlServer:Identity", "1, 1"),
+                    TenNV = table.Column<string>(type: "nvarchar(max)", nullable: false),
+                    GioiTinh = table.Column<string>(type: "nvarchar(max)", nullable: false),
+                    NgaySinh = table.Column<string>(type: "nvarchar(max)", nullable: false),
+                    AnhDaiDien = table.Column<string>(type: "nvarchar(max)", nullable: false),
+                    DiaChi = table.Column<string>(type: "nvarchar(max)", nullable: false),
+                    SDT = table.Column<string>(type: "nvarchar(max)", nullable: false),
+                    Email = table.Column<string>(type: "nvarchar(max)", nullable: false),
+                    NgayVaoLam = table.Column<string>(type: "nvarchar(max)", nullable: false),
+                    TinhTrang = table.Column<string>(type: "nvarchar(max)", nullable: false),
+                    MucLuong = table.Column<int>(type: "int", nullable: false),
+                    ViTri = table.Column<string>(type: "nvarchar(max)", nullable: false)
+                },
+                constraints: table =>
+                {
+                    table.PrimaryKey("PK_NhanViens", x => x.Id);
+                });
+
+            migrationBuilder.CreateTable(
+                name: "Phongs",
+                columns: table => new
+                {
+                    Id = table.Column<int>(type: "int", nullable: false)
+                        .Annotation("SqlServer:Identity", "1, 1"),
+                    SoPhong = table.Column<string>(type: "nvarchar(max)", nullable: false),
+                    TenPhong = table.Column<string>(type: "nvarchar(max)", nullable: false),
+                    HangPhong = table.Column<string>(type: "nvarchar(max)", nullable: false),
+                    GiaPhong = table.Column<string>(type: "nvarchar(max)", nullable: false),
+                    TrangThai = table.Column<string>(type: "nvarchar(max)", nullable: false)
+                },
+                constraints: table =>
+                {
+                    table.PrimaryKey("PK_Phongs", x => x.Id);
                 });
 
             migrationBuilder.CreateTable(
@@ -112,8 +249,8 @@ namespace test3.Migrations
                 name: "AspNetUserLogins",
                 columns: table => new
                 {
-                    LoginProvider = table.Column<string>(type: "nvarchar(450)", nullable: false),
-                    ProviderKey = table.Column<string>(type: "nvarchar(450)", nullable: false),
+                    LoginProvider = table.Column<string>(type: "nvarchar(128)", maxLength: 128, nullable: false),
+                    ProviderKey = table.Column<string>(type: "nvarchar(128)", maxLength: 128, nullable: false),
                     ProviderDisplayName = table.Column<string>(type: "nvarchar(max)", nullable: true),
                     UserId = table.Column<string>(type: "nvarchar(450)", nullable: false)
                 },
@@ -157,8 +294,8 @@ namespace test3.Migrations
                 columns: table => new
                 {
                     UserId = table.Column<string>(type: "nvarchar(450)", nullable: false),
-                    LoginProvider = table.Column<string>(type: "nvarchar(450)", nullable: false),
-                    Name = table.Column<string>(type: "nvarchar(450)", nullable: false),
+                    LoginProvider = table.Column<string>(type: "nvarchar(128)", maxLength: 128, nullable: false),
+                    Name = table.Column<string>(type: "nvarchar(128)", maxLength: 128, nullable: false),
                     Value = table.Column<string>(type: "nvarchar(max)", nullable: true)
                 },
                 constraints: table =>
@@ -219,6 +356,12 @@ namespace test3.Migrations
                 name: "Abouts");
 
             migrationBuilder.DropTable(
+                name: "AnhDichVus");
+
+            migrationBuilder.DropTable(
+                name: "AnhPhongs");
+
+            migrationBuilder.DropTable(
                 name: "AspNetRoleClaims");
 
             migrationBuilder.DropTable(
@@ -232,6 +375,24 @@ namespace test3.Migrations
 
             migrationBuilder.DropTable(
                 name: "AspNetUserTokens");
+
+            migrationBuilder.DropTable(
+                name: "DichVus");
+
+            migrationBuilder.DropTable(
+                name: "DichVuSuDungs");
+
+            migrationBuilder.DropTable(
+                name: "HoaDons");
+
+            migrationBuilder.DropTable(
+                name: "KhachHangs");
+
+            migrationBuilder.DropTable(
+                name: "NhanViens");
+
+            migrationBuilder.DropTable(
+                name: "Phongs");
 
             migrationBuilder.DropTable(
                 name: "AspNetRoles");

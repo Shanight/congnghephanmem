@@ -12,8 +12,8 @@ using test3.Models;
 namespace test3.Migrations
 {
     [DbContext(typeof(ApplicationDbContext))]
-    [Migration("20240330032309_test7")]
-    partial class test7
+    [Migration("20240331044213_test1")]
+    partial class test1
     {
         /// <inheritdoc />
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -364,10 +364,6 @@ namespace test3.Migrations
 
                     SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
 
-                    b.Property<string>("IDDVSD")
-                        .IsRequired()
-                        .HasColumnType("nvarchar(max)");
-
                     b.Property<string>("IDKH")
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
@@ -376,32 +372,7 @@ namespace test3.Migrations
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<string>("MaDP")
-                        .IsRequired()
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<string>("TongTien")
-                        .IsRequired()
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<string>("TrangThai")
-                        .IsRequired()
-                        .HasColumnType("nvarchar(max)");
-
-                    b.HasKey("Id");
-
-                    b.ToTable("HoaDons");
-                });
-
-            modelBuilder.Entity("test3.Models.HoaDonChiTiet", b =>
-                {
-                    b.Property<int>("Id")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("int");
-
-                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
-
-                    b.Property<string>("IDHD")
+                    b.Property<string>("MaPhong")
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
@@ -417,13 +388,17 @@ namespace test3.Migrations
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<string>("Tien")
+                    b.Property<string>("TongTien")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("TrangThai")
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
                     b.HasKey("Id");
 
-                    b.ToTable("HoaDonChiTiets");
+                    b.ToTable("HoaDons");
                 });
 
             modelBuilder.Entity("test3.Models.KhachHang", b =>
@@ -483,9 +458,8 @@ namespace test3.Migrations
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<string>("MucLuong")
-                        .IsRequired()
-                        .HasColumnType("nvarchar(max)");
+                    b.Property<int>("MucLuong")
+                        .HasColumnType("int");
 
                     b.Property<string>("NgaySinh")
                         .IsRequired()
