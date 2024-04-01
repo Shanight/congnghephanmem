@@ -21,8 +21,13 @@ namespace test3.Controllers
 
         // GET: HoaDons
         public async Task<IActionResult> Index()
-        {
-            return View(await _context.HoaDons.ToListAsync());
+        {var hoaDons = await _context.HoaDons.ToListAsync();
+             ViewBag.Phongs = _context.Phongs.ToList();
+            ViewBag.DichVus = _context.DichVus.ToList();
+            ViewBag.NhanViens = _context.NhanViens.ToList();
+            ViewBag.KhachHangs = _context.KhachHangs.ToList();
+            ViewBag.AnhPhongs = _context.AnhPhongs.ToList();
+            return View(hoaDons);
         }
 
         // GET: HoaDons/Details/5
@@ -44,15 +49,16 @@ namespace test3.Controllers
         }
 
         // GET: HoaDons/Create
-        public IActionResult Create()
-        {
-            ViewBag.Phongs = _context.Phongs.ToList();
-            ViewBag.DichVus = _context.DichVus.ToList();
-            ViewBag.NhanViens = _context.NhanViens.ToList();
-            ViewBag.KhachHangs = _context.KhachHangs.ToList();
-            ViewBag.AnhPhongs = _context.AnhPhongs.ToList();
-            return View();
-        }
+        public async Task<IActionResult> Create()
+{
+    ViewBag.Phongs = _context.Phongs.ToList();
+    ViewBag.DichVus = _context.DichVus.ToList();
+    ViewBag.NhanViens = _context.NhanViens.ToList();
+    ViewBag.KhachHangs = _context.KhachHangs.ToList();
+    ViewBag.AnhPhongs = _context.AnhPhongs.ToList();
+
+    return View();
+}
 
         // POST: HoaDons/Create
         // To protect from overposting attacks, enable the specific properties you want to bind to.
@@ -89,37 +95,43 @@ namespace test3.Controllers
 }
 */
         [HttpPost]
-        [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Create(HoaDon hoaDon)
+[ValidateAntiForgeryToken]
+public async Task<IActionResult> Create(HoaDon hoaDon)
+{
+    if (ModelState.IsValid)
+    {
+        _context.Add(hoaDon);
+        await _context.SaveChangesAsync();
+
+        // Process service usage data
+        foreach (var dichVu in _context.DichVus)
         {
-            if (ModelState.IsValid)
+            var quantityFieldName = $"quantity-{dichVu.TenDV}";
+            var quantityValue = Request.Form[quantityFieldName].ToString();
+            if (!string.IsNullOrEmpty(quantityValue) && int.TryParse(quantityValue, out int quantity) && quantity > 0)
             {
-                _context.Add(hoaDon);
-                await _context.SaveChangesAsync();
-
-                // Process service usage data
-                foreach (var dichVu in _context.DichVus)
+                var dichVuSuDung = new DichVuSuDung
                 {
-                    var quantityFieldName = $"quantity-{dichVu.Id}";
-                    var quantityValue = Request.Form[quantityFieldName].ToString();
-                    if (!string.IsNullOrEmpty(quantityValue) && int.TryParse(quantityValue, out int quantity) && quantity > 0)
-                    {
-                        var dichVuSuDung = new DichVuSuDung
-                        {
-                            MaDP = hoaDon.Id.ToString(),
-                            IDDV = dichVu.Id.ToString(),
-                            SoLuong = quantity.ToString()
-                        };
-                        _context.Add(dichVuSuDung);
-                    }
-                }
-
-                await _context.SaveChangesAsync();
-                return RedirectToAction(nameof(Index));
+                    MaDP = hoaDon.MaPhong,
+                    IDDV = dichVu.TenDV,
+                    SoLuong = quantity.ToString()
+                };
+                _context.Add(dichVuSuDung);
             }
-
-            return View(hoaDon);
         }
+
+        await _context.SaveChangesAsync();
+        return RedirectToAction(nameof(Index));
+    }
+
+    ViewBag.Phongs = _context.Phongs.ToList();
+    ViewBag.DichVus = _context.DichVus.ToList();
+    ViewBag.NhanViens = _context.NhanViens.ToList();
+    ViewBag.KhachHangs = _context.KhachHangs.ToList();
+    ViewBag.AnhPhongs = _context.AnhPhongs.ToList();
+
+    return View(hoaDon);
+}
 
         // GET: HoaDons/Edit/5
         [HttpGet]

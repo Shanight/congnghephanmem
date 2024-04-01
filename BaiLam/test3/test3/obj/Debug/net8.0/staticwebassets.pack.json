@@ -1997,12 +1997,16 @@
       "PackagePath": "staticwebassets\\imgupload\\anhdaidien\\0_20240330124948.png"
     },
     {
-      "Id": "D:\\congnghephanmem\\congnghephanmem\\BaiLam\\test3\\test3\\wwwroot\\imgupload\\anhdaidien\\Nguyễn Văn A88_1_20240331203947.png",
-      "PackagePath": "staticwebassets\\imgupload\\anhdaidien\\Nguyễn Văn A88_1_20240331203947.png"
+      "Id": "D:\\congnghephanmem\\congnghephanmem\\BaiLam\\test3\\test3\\wwwroot\\imgupload\\anhdaidien\\Nguyễn Văn A88_1_20240401084056.png",
+      "PackagePath": "staticwebassets\\imgupload\\anhdaidien\\Nguyễn Văn A88_1_20240401084056.png"
     },
     {
       "Id": "D:\\congnghephanmem\\congnghephanmem\\BaiLam\\test3\\test3\\wwwroot\\imgupload\\anhdaidien\\Nguyễn Văn A_0_20240330131213.png",
       "PackagePath": "staticwebassets\\imgupload\\anhdaidien\\Nguyễn Văn A_0_20240330131213.png"
+    },
+    {
+      "Id": "D:\\congnghephanmem\\congnghephanmem\\BaiLam\\test3\\test3\\wwwroot\\imgupload\\anhdaidien\\Nguyễn Văn A_0_20240401083330.png",
+      "PackagePath": "staticwebassets\\imgupload\\anhdaidien\\Nguyễn Văn A_0_20240401083330.png"
     },
     {
       "Id": "D:\\congnghephanmem\\congnghephanmem\\BaiLam\\test3\\test3\\wwwroot\\imgupload\\anhdaidien\\Nguyễn Văn A_6_20240330213021.png",
@@ -2029,8 +2033,16 @@
       "PackagePath": "staticwebassets\\imgupload\\anhdaidien\\Nguyễn Văn B_0_20240330130007.png"
     },
     {
+      "Id": "D:\\congnghephanmem\\congnghephanmem\\BaiLam\\test3\\test3\\wwwroot\\imgupload\\anhdaidien\\Nguyễn Văn C_0_20240401083258.png",
+      "PackagePath": "staticwebassets\\imgupload\\anhdaidien\\Nguyễn Văn C_0_20240401083258.png"
+    },
+    {
       "Id": "D:\\congnghephanmem\\congnghephanmem\\BaiLam\\test3\\test3\\wwwroot\\imgupload\\anhdaidien\\Nguyễn Văn C_2_20240331203758.png",
       "PackagePath": "staticwebassets\\imgupload\\anhdaidien\\Nguyễn Văn C_2_20240331203758.png"
+    },
+    {
+      "Id": "D:\\congnghephanmem\\congnghephanmem\\BaiLam\\test3\\test3\\wwwroot\\imgupload\\anhdaidien\\Nguyễn Văn D_0_20240401083231.png",
+      "PackagePath": "staticwebassets\\imgupload\\anhdaidien\\Nguyễn Văn D_0_20240401083231.png"
     },
     {
       "Id": "D:\\congnghephanmem\\congnghephanmem\\BaiLam\\test3\\test3\\wwwroot\\imgupload\\anhdichvu\\AnhDV_1_02de2b83-67f4-4671-83a7-a8f47c81ad05.png",
@@ -2043,6 +2055,26 @@
     {
       "Id": "D:\\congnghephanmem\\congnghephanmem\\BaiLam\\test3\\test3\\wwwroot\\imgupload\\anhdichvu\\AnhDV_2_fb361029-c3c6-4444-b93c-7644eefbd258.png",
       "PackagePath": "staticwebassets\\imgupload\\anhdichvu\\AnhDV_2_fb361029-c3c6-4444-b93c-7644eefbd258.png"
+    },
+    {
+      "Id": "D:\\congnghephanmem\\congnghephanmem\\BaiLam\\test3\\test3\\wwwroot\\imgupload\\anhdichvu\\AnhDV_3_099f6be1-bff0-4a10-979a-011d88f12a11.png",
+      "PackagePath": "staticwebassets\\imgupload\\anhdichvu\\AnhDV_3_099f6be1-bff0-4a10-979a-011d88f12a11.png"
+    },
+    {
+      "Id": "D:\\congnghephanmem\\congnghephanmem\\BaiLam\\test3\\test3\\wwwroot\\imgupload\\anhdichvu\\AnhDV_3_6d01d857-3c9e-4c36-9da0-0f177b4f6d3a.png",
+      "PackagePath": "staticwebassets\\imgupload\\anhdichvu\\AnhDV_3_6d01d857-3c9e-4c36-9da0-0f177b4f6d3a.png"
+    },
+    {
+      "Id": "D:\\congnghephanmem\\congnghephanmem\\BaiLam\\test3\\test3\\wwwroot\\imgupload\\anhdichvu\\AnhDV_4_174d0e8e-f47d-4cff-8a25-d7eb03a56ede.png",
+      "PackagePath": "staticwebassets\\imgupload\\anhdichvu\\AnhDV_4_174d0e8e-f47d-4cff-8a25-d7eb03a56ede.png"
+    },
+    {
+      "Id": "D:\\congnghephanmem\\congnghephanmem\\BaiLam\\test3\\test3\\wwwroot\\imgupload\\anhdichvu\\AnhDV_4_5258ba4f-0de1-47ec-b68d-8750bd348101.png",
+      "PackagePath": "staticwebassets\\imgupload\\anhdichvu\\AnhDV_4_5258ba4f-0de1-47ec-b68d-8750bd348101.png"
+    },
+    {
+      "Id": "D:\\congnghephanmem\\congnghephanmem\\BaiLam\\test3\\test3\\wwwroot\\imgupload\\anhdichvu\\AnhDV_4_5f7836d2-421c-4722-959d-ca18970d8816.png",
+      "PackagePath": "staticwebassets\\imgupload\\anhdichvu\\AnhDV_4_5f7836d2-421c-4722-959d-ca18970d8816.png"
     },
     {
       "Id": "D:\\congnghephanmem\\congnghephanmem\\BaiLam\\test3\\test3\\wwwroot\\imgupload\\anhdichvu\\AnhDichVu_ID2_7855861a-c720-4cec-9af3-b6b1e4081808.jpg",
@@ -2109,6 +2141,30 @@
       "PackagePath": "staticwebassets\\imgupload\\anhphong\\AnhPhong2_fbbb66fa-4f8d-4099-a308-e545c5df67bc.png"
     },
     {
+      "Id": "D:\\congnghephanmem\\congnghephanmem\\BaiLam\\test3\\test3\\wwwroot\\imgupload\\anhphong\\AnhPhong3_420be8ee-8f57-4eae-86fe-0c20c6f5c2a4.png",
+      "PackagePath": "staticwebassets\\imgupload\\anhphong\\AnhPhong3_420be8ee-8f57-4eae-86fe-0c20c6f5c2a4.png"
+    },
+    {
+      "Id": "D:\\congnghephanmem\\congnghephanmem\\BaiLam\\test3\\test3\\wwwroot\\imgupload\\anhphong\\AnhPhong3_743f3677-2458-442f-a0c9-499ac5528f61.png",
+      "PackagePath": "staticwebassets\\imgupload\\anhphong\\AnhPhong3_743f3677-2458-442f-a0c9-499ac5528f61.png"
+    },
+    {
+      "Id": "D:\\congnghephanmem\\congnghephanmem\\BaiLam\\test3\\test3\\wwwroot\\imgupload\\anhphong\\AnhPhong3_e3b03ad0-4ca4-4f44-a1ec-df78951770d9.png",
+      "PackagePath": "staticwebassets\\imgupload\\anhphong\\AnhPhong3_e3b03ad0-4ca4-4f44-a1ec-df78951770d9.png"
+    },
+    {
+      "Id": "D:\\congnghephanmem\\congnghephanmem\\BaiLam\\test3\\test3\\wwwroot\\imgupload\\anhphong\\AnhPhong4_299167cd-341a-4d5b-889d-0500a450444b.png",
+      "PackagePath": "staticwebassets\\imgupload\\anhphong\\AnhPhong4_299167cd-341a-4d5b-889d-0500a450444b.png"
+    },
+    {
+      "Id": "D:\\congnghephanmem\\congnghephanmem\\BaiLam\\test3\\test3\\wwwroot\\imgupload\\anhphong\\AnhPhong4_3d23cbc1-b3c1-43e9-9537-2c1dc479b1ad.png",
+      "PackagePath": "staticwebassets\\imgupload\\anhphong\\AnhPhong4_3d23cbc1-b3c1-43e9-9537-2c1dc479b1ad.png"
+    },
+    {
+      "Id": "D:\\congnghephanmem\\congnghephanmem\\BaiLam\\test3\\test3\\wwwroot\\imgupload\\anhphong\\AnhPhong4_f16cd3d9-2928-4a69-8530-1f751a6f55d1.png",
+      "PackagePath": "staticwebassets\\imgupload\\anhphong\\AnhPhong4_f16cd3d9-2928-4a69-8530-1f751a6f55d1.png"
+    },
+    {
       "Id": "D:\\congnghephanmem\\congnghephanmem\\BaiLam\\test3\\test3\\wwwroot\\imgupload\\anhphong\\AnhPhong52_094d16cc-a2bf-477a-a11a-cb889b362506.jpg",
       "PackagePath": "staticwebassets\\imgupload\\anhphong\\AnhPhong52_094d16cc-a2bf-477a-a11a-cb889b362506.jpg"
     },
@@ -2167,6 +2223,42 @@
     {
       "Id": "D:\\congnghephanmem\\congnghephanmem\\BaiLam\\test3\\test3\\wwwroot\\imgupload\\anhphong\\AnhPhong57_5796b327-5713-4263-a5b0-800991d83174.png",
       "PackagePath": "staticwebassets\\imgupload\\anhphong\\AnhPhong57_5796b327-5713-4263-a5b0-800991d83174.png"
+    },
+    {
+      "Id": "D:\\congnghephanmem\\congnghephanmem\\BaiLam\\test3\\test3\\wwwroot\\imgupload\\anhphong\\AnhPhong5_8d4963dc-7e7e-41ed-9a58-92707a4450e2.png",
+      "PackagePath": "staticwebassets\\imgupload\\anhphong\\AnhPhong5_8d4963dc-7e7e-41ed-9a58-92707a4450e2.png"
+    },
+    {
+      "Id": "D:\\congnghephanmem\\congnghephanmem\\BaiLam\\test3\\test3\\wwwroot\\imgupload\\anhphong\\AnhPhong5_b00b2bd7-3a68-45d7-b823-7aa536fe8d12.png",
+      "PackagePath": "staticwebassets\\imgupload\\anhphong\\AnhPhong5_b00b2bd7-3a68-45d7-b823-7aa536fe8d12.png"
+    },
+    {
+      "Id": "D:\\congnghephanmem\\congnghephanmem\\BaiLam\\test3\\test3\\wwwroot\\imgupload\\anhphong\\AnhPhong5_fa9942fd-a50d-48c3-a89b-db7dc48c24dc.png",
+      "PackagePath": "staticwebassets\\imgupload\\anhphong\\AnhPhong5_fa9942fd-a50d-48c3-a89b-db7dc48c24dc.png"
+    },
+    {
+      "Id": "D:\\congnghephanmem\\congnghephanmem\\BaiLam\\test3\\test3\\wwwroot\\imgupload\\anhphong\\AnhPhong6_5a07f521-48b7-4d5d-9609-a480d4df76bb.png",
+      "PackagePath": "staticwebassets\\imgupload\\anhphong\\AnhPhong6_5a07f521-48b7-4d5d-9609-a480d4df76bb.png"
+    },
+    {
+      "Id": "D:\\congnghephanmem\\congnghephanmem\\BaiLam\\test3\\test3\\wwwroot\\imgupload\\anhphong\\AnhPhong6_73ab09b2-537f-4437-8edc-1f2e6ff4f8ae.png",
+      "PackagePath": "staticwebassets\\imgupload\\anhphong\\AnhPhong6_73ab09b2-537f-4437-8edc-1f2e6ff4f8ae.png"
+    },
+    {
+      "Id": "D:\\congnghephanmem\\congnghephanmem\\BaiLam\\test3\\test3\\wwwroot\\imgupload\\anhphong\\AnhPhong6_9bc138e4-7515-4601-85c1-422c1495067d.png",
+      "PackagePath": "staticwebassets\\imgupload\\anhphong\\AnhPhong6_9bc138e4-7515-4601-85c1-422c1495067d.png"
+    },
+    {
+      "Id": "D:\\congnghephanmem\\congnghephanmem\\BaiLam\\test3\\test3\\wwwroot\\imgupload\\anhphong\\AnhPhong7_2d17780b-dc71-4338-9261-756b929fb52f.png",
+      "PackagePath": "staticwebassets\\imgupload\\anhphong\\AnhPhong7_2d17780b-dc71-4338-9261-756b929fb52f.png"
+    },
+    {
+      "Id": "D:\\congnghephanmem\\congnghephanmem\\BaiLam\\test3\\test3\\wwwroot\\imgupload\\anhphong\\AnhPhong7_514dff60-3d7c-42c5-906a-5442744764fb.png",
+      "PackagePath": "staticwebassets\\imgupload\\anhphong\\AnhPhong7_514dff60-3d7c-42c5-906a-5442744764fb.png"
+    },
+    {
+      "Id": "D:\\congnghephanmem\\congnghephanmem\\BaiLam\\test3\\test3\\wwwroot\\imgupload\\anhphong\\AnhPhong7_de0475c7-6976-4b2e-bf69-52e8c58575e4.png",
+      "PackagePath": "staticwebassets\\imgupload\\anhphong\\AnhPhong7_de0475c7-6976-4b2e-bf69-52e8c58575e4.png"
     },
     {
       "Id": "D:\\congnghephanmem\\congnghephanmem\\BaiLam\\test3\\test3\\wwwroot\\js\\site.js",

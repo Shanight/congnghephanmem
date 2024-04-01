@@ -147,14 +147,14 @@
                                 <div asp-validation-summary="ModelOnly" class="text-danger"></div>
                                 <div class="col-md-6">
                                     <label asp-for="IDKH" class="Form-label">Tên khách hàng</label>
-                                    <input asp-for="IDKH" id="selectedKhachHangId" style="display: none;" />
-                                    <input id="selectedTenKhachHang" disabled class="form-control" />
+                                    <input asp-for="IDKH" id="selectedTenKhachHang" class="form-control" value=""
+                                        readonly />
                                     <span asp-validation-for="IDKH" class="text-danger"></span>
                                 </div>
                                 <div class="col-md-6">
                                     <label asp-for="MaPhong" class="Form-label">Mã phòng</label>
-                                    <input asp-for="MaPhong" id="selectedphongId" style="display: none;" />
-                                    <input id="selectedTenPhong" disabled class="form-control" />
+                                    <input asp-for="MaPhong" id="selectedTenPhong" class="form-control" value=""
+                                        readonly />
                                     <span asp-validation-for="MaPhong" class="text-danger"></span>
                                 </div>
 
@@ -216,7 +216,7 @@
                                         <option value="">--Vui lòng chọn--</option>
                                         @foreach (var nhanvien in ViewBag.NhanViens)
                                         {
-                                            <option value="@nhanvien.Id">@nhanvien.TenNV</option>
+                                            <option value="@nhanvien.TenNV">@nhanvien.TenNV</option>
                                         }
                                     </select>
                                     <span asp-validation-for="IDNV" class="text-danger"></span>
@@ -239,7 +239,7 @@
                                         value="@DateTime.Now.ToString("yyyy-MM-dd")" />
                                     <span asp-validation-for="NgayTra" class="text-danger"></span>
                                 </div>
-                                <input asp-for="TongTien" class="form-control" value="0"  type="hidden"/>
+                                <input asp-for="TongTien" class="form-control" value="0" type="hidden" />
                                 <input asp-for="TrangThai" class="form-control" value="Chưa thanh toán" type="hidden" />
                                 @foreach (var dichVu in ViewBag.DichVus)
                                 {
@@ -265,20 +265,18 @@
 @section Scripts {
     <script>
         function updateSelectedKhachHangId(khachHangId, khachHangTen) {
-            var khachHangIdInput = document.getElementById("selectedKhachHangId");
             var khachHangTenInput = document.getElementById("selectedTenKhachHang");
-            khachHangIdInput.value = khachHangId;
             khachHangTenInput.value = khachHangTen;
+            var khachHangIdInput = document.getElementById("IDKH");
+            khachHangIdInput.value = khachHangId;
         }
 
         function updateSelectedPhongId(phongId, TenPhong) {
-            var phongIdInput = document.getElementById("selectedphongId");
             var TenPhongInput = document.getElementById("selectedTenPhong");
-            phongIdInput.value = phongId;
             TenPhongInput.value = TenPhong;
+            var phongIdInput = document.getElementById("MaPhong");
+            phongIdInput.value = phongId;
         }
     </script>
-    @{
-        await Html.RenderPartialAsync("_ValidationScriptsPartial");
-    }
+
 }
